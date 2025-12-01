@@ -1,29 +1,30 @@
-/* --- 全局变量：Apple Pro 极简黑蓝风 --- */
+/* --- 全局变量：机能极客风 (Cyber Minimal) --- */
 :root {
-    --bg-color: #000000;
-    /* 极致纯黑 */
-    --card-bg: #1c1c1e;
-    /* Apple 深色卡片背景 */
-    --text-main: #f5f5f7;
-    /* Apple 钛金白 */
-    --text-muted: #86868b;
-    /* Apple 灰色说明文字 */
-    --accent-blue: #2997ff;
-    /* iPhone 15 宣传蓝 */
-    --border-color: #333333;
+    --bg-color: #050505;
+    /* 接近纯黑 */
+    --card-bg: #111111;
+    /* 极深灰卡片 */
+    --text-main: #ffffff;
+    --text-muted: #666666;
+    /* 很暗的灰色，突出主次 */
+    --accent-color: #ccff00;
+    /* 机能绿 (Cyber Lime) */
 
-    /* VS Code 颜色变量 */
+    /* VS Code 颜色 */
     --vscode-bg: #1e1e1e;
-    --vscode-header: #2d2d2d;
-    /* 窗口顶部栏颜色 */
-    --font-ui: 'SF Pro Text', 'Inter', -apple-system, sans-serif;
-    --font-code: 'Fira Code', 'JetBrains Mono', monospace;
+    --vscode-sidebar: #252526;
+    --vscode-header: #333333;
+
+    /* 字体配置：硬朗风格 */
+    --font-main: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    /* 只有代码字体才够Geek */
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
-    font-family: var(--font-ui);
+    font-family: var(--font-main);
     margin: 0;
     line-height: 1.6;
     overflow-x: hidden;
@@ -46,204 +47,219 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
-    background: rgba(0, 0, 0, 0.8);
-    /* 纯黑半透明 */
-    backdrop-filter: blur(20px);
+    padding: 20px 40px;
+    background: rgba(5, 5, 5, 0.9);
+    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #222;
 }
 
-/* 左上角Logo样式 */
-.logo {
-    font-weight: 700;
-    font-size: 1.2rem;
-    letter-spacing: -0.5px;
-    color: var(--text-main);
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
-.logo span {
-    color: var(--accent-blue);
-}
-
-/* 蓝色点缀 */
-
+/* 菜单样式优化 */
 .menu {
     display: flex;
     gap: 30px;
-    font-size: 0.85rem;
-    color: var(--text-muted);
 }
 
-.menu a:hover {
-    color: var(--accent-blue);
+.menu a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #888;
+    letter-spacing: 0.5px;
 }
 
-/* --- 首页 Hero 区域 --- */
+.menu a:hover,
+.menu a.active {
+    color: var(--accent-color);
+}
+
+/* 右侧 GitHub 图标 */
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.github-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+    transition: 0.3s;
+}
+
+.github-icon:hover svg {
+    fill: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* --- Hero 区域 (排版核心) --- */
 .hero-section {
+    min-height: 80vh;
+    /* 占据大部分屏幕 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 120px 20px;
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 0 20px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    /*由于背景太黑，加一点极淡的网格增加高级感*/
 }
 
+/* 打字机大标题 */
 .hero-title {
-    font-size: 4rem;
-    /* 更大的标题 */
-    font-weight: 700;
-    margin: 20px 0;
+    font-family: var(--font-main);
+    font-size: 5rem;
+    /* 极大 */
+    font-weight: 900;
+    margin: 0;
     color: var(--text-main);
-    letter-spacing: -1px;
-    min-height: 1.2em;
-    /* 防止打字抖动 */
+    text-transform: uppercase;
+    /* 强制大写 */
+    letter-spacing: -2px;
+    line-height: 1.1;
 }
 
-/* 打字机光标 */
+/* 光标 */
 .cursor {
     display: inline-block;
-    width: 4px;
-    height: 1em;
-    background-color: var(--accent-blue);
+    width: 15px;
+    height: 60px;
+    /* 匹配字体高度 */
+    background-color: var(--accent-color);
     animation: blink 1s infinite;
-    vertical-align: middle;
-    margin-left: 5px;
-    position: relative;
-    top: -5px;
+    vertical-align: sub;
+    margin-left: 10px;
 }
 
 @keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
     50% {
         opacity: 0;
     }
 }
 
+/* 副标题 (极小、灰色) */
 .hero-desc {
+    margin-top: 30px;
     color: var(--text-muted);
-    font-size: 1.5rem;
-    /* 增大副标题字号，像 Apple */
-    max-width: 600px;
-    margin: 0 auto 40px;
+    font-size: 0.9rem;
+    /* 很小 */
+    line-height: 1.8;
     font-weight: 400;
+    font-family: var(--font-mono);
+    /* 用代码字体显示个人信息 */
+    letter-spacing: 1px;
 }
 
-/* 蓝色主按钮 */
+/* 绿色按钮 */
 .cta-btn {
-    background-color: var(--accent-blue);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 980px;
-    /* 胶囊圆角 */
-    font-weight: 500;
-    font-size: 1rem;
-    display: inline-block;
+    margin-top: 50px;
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 12px 40px;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .cta-btn:hover {
-    background-color: #0071e3;
-    transform: scale(1.02);
+    background-color: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 20px rgba(204, 255, 0, 0.4);
 }
 
-/* --- 首页卡片列表 --- */
+/* --- 卡片区域 --- */
 .grid-section {
-    padding: 50px 5%;
-    max-width: 1200px;
+    padding: 50px 10%;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .section-header {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 40px;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
 }
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-.apple-card {
+.tech-card {
     background: var(--card-bg);
-    /* 深灰卡片 */
-    border-radius: 18px;
-    padding: 30px;
-    transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 280px;
-    /* 固定高度，整齐 */
+    border: 1px solid #222;
+    padding: 25px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
-.apple-card:hover {
-    transform: scale(1.02);
-    background: #2c2c2e;
-    /* 悬停稍微变亮 */
+.tech-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
 }
 
 .card-date {
+    color: var(--accent-color);
+    font-family: var(--font-mono);
     font-size: 0.8rem;
-    color: #6e6e73;
     margin-bottom: 10px;
 }
 
 .card-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0 0 15px 0;
-    color: var(--text-main);
+    font-size: 1.3rem;
+    margin: 10px 0;
+    font-weight: 700;
 }
 
 .card-excerpt {
-    font-size: 1rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-    flex-grow: 1;
-    /* 撑满中间 */
-    overflow: hidden;
-}
-
-.card-link {
-    color: var(--accent-blue);
+    color: #666;
     font-size: 0.9rem;
-    font-weight: 500;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
+    line-height: 1.6;
 }
 
-.card-link::after {
-    content: ' ›';
-    margin-left: 5px;
-    font-size: 1.2em;
-}
 
-/* --- 文章页：Pro 级 VS Code --- */
+/* --- 文章页 VS Code 修复 --- */
 .vscode-wrapper {
-    max-width: 1100px;
-    /* 加大宽度 */
-    margin: 40px auto;
+    max-width: 1000px;
+    margin: 50px auto;
     background: var(--vscode-bg);
-    border-radius: 10px;
-    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.8);
-    /* 更深的阴影 */
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
     border: 1px solid #333;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-/* 顶部 Mac 风格标题栏 */
 .window-header {
-    height: 30px;
     background: var(--vscode-header);
+    height: 30px;
     display: flex;
     align-items: center;
     padding: 0 15px;
-    border-bottom: 1px solid #252526;
 }
 
-/* 红黄绿三颗按钮 */
 .traffic-lights {
     display: flex;
     gap: 8px;
@@ -267,95 +283,87 @@ ul {
     background: #27c93f;
 }
 
-.window-title {
-    margin: 0 auto;
-    color: #999;
-    font-size: 0.8rem;
-    font-family: var(--font-ui);
-}
-
 .vscode-body {
     display: flex;
-    min-height: 800px;
 }
 
-/* 侧边栏 */
 .vscode-sidebar {
     width: 50px;
-    background: #252526;
-    /* 侧边栏稍亮 */
+    background: var(--vscode-sidebar);
     border-right: 1px solid #1e1e1e;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 15px;
-    gap: 25px;
+    gap: 20px;
 }
 
 .side-icon {
     width: 24px;
     height: 24px;
-    opacity: 0.4;
-    background: #858585;
-    border-radius: 2px;
+    opacity: 0.5;
+    background: #888;
 }
 
 .side-icon.active {
     opacity: 1;
-    background: var(--text-main);
-    border-left: 2px solid var(--text-main);
+    background: #fff;
+    border-left: 2px solid #fff;
 }
 
-.vscode-content-area {
-    flex: 1;
-    background: var(--vscode-bg);
-}
-
-/* Tab 栏 */
-.tab-bar {
-    background: #1e1e1e;
-    height: 35px;
-    display: flex;
-    border-bottom: 1px solid #252526;
-}
-
-.tab {
-    background: #1e1e1e;
-    color: #fff;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    font-size: 0.8rem;
-    border-top: 1px solid var(--accent-blue);
-    /* 激活状态蓝条 */
-    border-right: 1px solid #252526;
-}
-
-.js-icon {
-    color: #f1e05a;
-    font-weight: 800;
-    margin-right: 8px;
-}
-
-/* 正文内容 */
 .post-content {
-    padding: 40px 60px;
+    padding: 40px;
     color: #d4d4d4;
-    font-family: var(--font-ui);
+    font-family: var(--font-main);
+    flex: 1;
 }
 
+/* !!! 关键修复：VS Code 标题颜色 !!! */
 .post-content h1 {
     color: #569cd6;
+    font-size: 2.2rem;
     border-bottom: 1px solid #333;
-    padding-bottom: 15px;
-    margin-bottom: 30px;
+    padding-bottom: 10px;
+    margin-top: 0;
 }
 
+/* 蓝色 */
+.post-content h2 {
+    color: #4ec9b0;
+    font-size: 1.8rem;
+    margin-top: 40px;
+}
+
+/* 青色 */
+.post-content h3 {
+    color: #dcdcaa;
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+/* 黄色 */
+.post-content h4 {
+    color: #c586c0;
+    font-size: 1.2rem;
+}
+
+/* 紫色 */
+.post-content h5,
+.post-content h6 {
+    color: #9cdcfe;
+}
+
+/* 浅蓝 */
+
 .post-content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
     color: #cccccc;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.post-content a {
+    color: var(--accent-color);
+    border-bottom: 1px dashed var(--accent-color);
 }
 
 .post-content code {
@@ -363,39 +371,14 @@ ul {
     padding: 2px 6px;
     border-radius: 4px;
     color: #ce9178;
-    font-family: var(--font-code);
-}
-
-/* 代码块样式 */
-.post-content figure.highlight {
-    background: #0d0d0d;
-    /* 代码块背景更黑，突出层次 */
-    border-radius: 8px;
-    padding: 20px;
-    border: 1px solid #333;
-    margin: 30px 0;
-    overflow-x: auto;
+    font-family: var(--font-mono);
 }
 
 .post-content pre {
-    font-family: var(--font-code);
-    margin: 0;
-    font-size: 0.95rem;
-}
-
-.highlight .keyword {
-    color: #c678dd;
-}
-
-.highlight .string {
-    color: #98c379;
-}
-
-.highlight .function {
-    color: #61afef;
-}
-
-.highlight .comment {
-    color: #5c6370;
-    font-style: italic;
+    background: #111;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    border: 1px solid #333;
 }
