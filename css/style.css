@@ -251,7 +251,7 @@ ul {
 
 /* --- 文章页 VS Code 修复 --- */
 .vscode-wrapper {
-    max-width: 1000px;
+    max-width: 90%;
     margin: 50px auto;
     background: var(--vscode-bg);
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
