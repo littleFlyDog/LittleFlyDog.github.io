@@ -1,24 +1,69 @@
+/* --- 全局变量：深空极光色系 --- */
 :root {
-    --bg-color: #050505;
-    /* 极深黑 */
-    --text-color: #ffffff;
-    /* 纯白 */
-    --accent-color: #ccff00;
-    /* 你的图片里的荧光酸性绿 */
-    --gray-text: #888888;
-    --font-main: 'Inter', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --bg-color: #0d1117;
+    /* GitHub Dimmed / 深空黑 */
+    --vscode-bg: #1e1e1e;
+    /* VS Code 主背景 */
+    --vscode-sidebar: #252526;
+    /* VS Code 侧边栏 */
+    --text-main: #e6edf3;
+    --text-muted: #8b949e;
+    --accent-gradient: linear-gradient(135deg, #FF2E93, #7B2CBF, #4CC9F0);
+    /* 极光渐变 */
+    --glass-bg: rgba(22, 27, 34, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --font-ui: 'Inter', -apple-system, sans-serif;
+    --font-code: 'Fira Code', 'JetBrains Mono', monospace;
 }
 
 body {
     background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--font-main);
+    color: var(--text-main);
+    font-family: var(--font-ui);
     margin: 0;
+    line-height: 1.6;
     overflow-x: hidden;
-    /* 防止横向滚动条 */
-    -webkit-font-smoothing: antialiased;
-    /* 让字体更清晰 */
+}
+
+/* --- 背景极光特效 --- */
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.3;
+    z-index: -1;
+    animation: float 10s infinite ease-in-out;
+}
+
+body::before {
+    background: #7B2CBF;
+    /* 紫色光球 */
+    top: -100px;
+    left: -100px;
+}
+
+body::after {
+    background: #4CC9F0;
+    /* 青色光球 */
+    bottom: -100px;
+    right: -100px;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, 50px);
+    }
 }
 
 a {
@@ -35,254 +80,303 @@ ul {
 
 /* --- 导航栏 --- */
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background: rgba(5, 5, 5, 0.8);
+    padding: 20px 5%;
     backdrop-filter: blur(10px);
-    /* 毛玻璃特效 */
-    z-index: 1000;
-    box-sizing: border-box;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .logo {
-    font-weight: 900;
-    font-size: 1.5rem;
-    letter-spacing: -1px;
-}
-
-.highlight {
-    color: var(--accent-color);
+    font-weight: 800;
+    font-size: 1.2rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .menu {
     display: flex;
-    gap: 30px;
-}
-
-.menu a {
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 1px;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
 }
 
 .menu a:hover {
-    color: var(--accent-color);
+    color: #fff;
 }
 
-/* --- Hero 首屏 --- */
+/* --- 首页 Hero --- */
 .hero-section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    /* 黑色网格背景 */
-    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-}
-
-.hero-content {
     text-align: center;
-    z-index: 2;
+    padding: 100px 20px;
     max-width: 800px;
-    padding: 20px;
+    margin: 0 auto;
 }
 
-.hero-subtitle {
-    font-family: var(--font-mono);
-    color: var(--accent-color);
-    font-size: 0.9rem;
+.status-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background: rgba(123, 44, 191, 0.2);
+    border: 1px solid rgba(123, 44, 191, 0.5);
+    color: #d0aae6;
+    font-size: 0.8rem;
     margin-bottom: 20px;
-    letter-spacing: 2px;
 }
 
 .hero-title {
-    font-size: 5rem;
-    /* 超大标题 */
-    line-height: 1;
-    font-weight: 900;
-    margin: 0 0 30px 0;
-    text-transform: uppercase;
-    min-height: 1.2em;
-    /* 防止打字时高度跳动 */
-}
-
-/* 响应式调整 */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 3rem;
-    }
-
-    .navbar {
-        padding: 20px;
-    }
-
-    .menu {
-        display: none;
-    }
-
-    /* 手机端暂隐藏菜单 */
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 10px 0;
+    background: linear-gradient(to right, #fff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-desc {
-    font-size: 1.2rem;
-    color: var(--gray-text);
-    margin-bottom: 50px;
-    line-height: 1.6;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 15px 40px;
-    background: var(--text-color);
-    color: var(--bg-color);
-    font-weight: 900;
-    font-family: var(--font-mono);
-    border: 1px solid var(--text-color);
+/* --- 首页卡片区 (Glassmorphism) --- */
+.grid-section {
+    padding: 50px 5%;
 }
 
-.cta-button:hover {
-    background: var(--accent-color);
-    border-color: var(--accent-color);
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(204, 255, 0, 0.3);
-}
-
-/* --- 内容列表 --- */
-.content-section {
-    padding: 100px 10%;
-}
-
-.section-header {
-    margin-bottom: 80px;
-    border-left: 5px solid var(--accent-color);
-    padding-left: 20px;
-}
-
-.section-header h2 {
-    font-size: 3rem;
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: 900;
-}
-
-/* 网格布局 */
-.post-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 60px;
-}
-
-.post-card {
-    background: #0a0a0a;
-    border: 1px solid #222;
-    transition: 0.4s;
-}
-
-.post-card:hover {
-    border-color: var(--accent-color);
-}
-
-.post-image-box {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-    position: relative;
-}
-
-.post-image-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.post-card:hover img {
-    transform: scale(1.1);
-    /* 图片放大效果 */
-}
-
-.post-info {
-    padding: 30px;
-}
-
-.post-date {
-    font-family: var(--font-mono);
-    color: var(--accent-color);
-    font-size: 0.8rem;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.post-title a {
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
     font-size: 1.5rem;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 15px;
 }
 
-.post-excerpt {
-    color: var(--gray-text);
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 25px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(123, 44, 191, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-tag {
+    font-size: 0.7rem;
+    color: #4CC9F0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.card-excerpt {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* --- 文章页：VS Code 风格界面 --- */
+.vscode-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: var(--vscode-bg);
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border: 1px solid #333;
+    display: flex;
+}
+
+/* 假侧边栏 */
+.vscode-sidebar {
+    width: 50px;
+    background: var(--vscode-sidebar);
+    border-right: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    gap: 20px;
+}
+
+.icon-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    opacity: 0.5;
+    background: #555;
+}
+
+.icon-dot.active {
+    background: #fff;
+    opacity: 1;
+    border-left: 2px solid #fff;
+}
+
+/* 主编辑区 */
+.vscode-main {
+    flex: 1;
+}
+
+/* 顶部 Tab 栏 */
+.vscode-tab-bar {
+    background: var(--vscode-bg);
+    height: 35px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #2d2d2d;
+}
+
+.vscode-tab {
+    background: #1e1e1e;
+    color: #fff;
+    padding: 0 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    border-top: 1px solid #007acc;
+    /* 激活状态蓝条 */
+    font-family: var(--font-ui);
+}
+
+.file-icon {
+    color: #e37933;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* JS logo 橙色 */
+
+/* 内容区域 */
+.post-content {
+    padding: 40px;
+    color: #d4d4d4;
+    /* VS Code 默认字色 */
+    font-family: var(--font-ui);
+}
+
+.post-content h1 {
+    font-size: 2rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    color: #569cd6;
+}
+
+.post-content h2 {
+    color: #4ec9b0;
+    margin-top: 40px;
+}
+
+.post-content h3 {
+    color: #dcdcaa;
+}
+
+.post-content p {
+    margin-bottom: 1.5em;
+    line-height: 1.8;
+    color: #cccccc;
+}
+
+.post-content a {
+    color: #3794ff;
+}
+
+.post-content blockquote {
+    border-left: 3px solid #007acc;
+    background: #252526;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.post-content code {
+    background: #3c3c3c;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: var(--font-code);
+    color: #ce9178;
+    font-size: 0.9em;
+}
+
+/* --- 代码块核心：模仿 VS Code Dark+ --- */
+.post-content figure.highlight {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 6px;
+    margin: 20px 0;
+    padding: 15px;
+    overflow-x: auto;
+}
+
+.post-content table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+.post-content .gutter {
+    display: none;
+}
+
+/* 隐藏 Hexo 默认行号，太丑 */
+.post-content pre {
+    margin: 0;
+    font-family: var(--font-code);
     font-size: 0.9rem;
 }
 
-/* --- 动画类 (配合 JS 使用) --- */
-.fade-in-up {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s forwards 1s;
-    /* 延迟执行 */
+/* 代码高亮颜色 (覆盖 Highlight.js) */
+.highlight .keyword {
+    color: #569cd6;
 }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* const, return */
+.highlight .string {
+    color: #ce9178;
 }
 
-/* 滚动显现的基础状态 */
-.scroll-reveal {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+/* "string" */
+.highlight .function {
+    color: #dcdcaa;
 }
 
-/* 滚动显现的激活状态 */
-.scroll-reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* func() */
+.highlight .comment {
+    color: #6a9955;
+    font-style: italic;
 }
 
-/* 打字机光标 */
-.cursor {
-    display: inline-block;
-    width: 10px;
-    height: 1em;
-    background-color: var(--accent-color);
-    animation: blink 1s infinite;
-    vertical-align: middle;
-    margin-left: 5px;
+/* // comment */
+.highlight .number {
+    color: #b5cea8;
 }
 
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
+.highlight .title {
+    color: #dcdcaa;
 }
 
-footer {
-    text-align: center;
-    padding: 50px;
-    border-top: 1px solid #222;
-    font-family: var(--font-mono);
-    color: #444;
-    font-size: 0.8rem;
+.highlight .params {
+    color: #9cdcfe;
 }

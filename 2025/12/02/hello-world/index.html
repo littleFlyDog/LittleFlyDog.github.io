@@ -5,42 +5,59 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Hexo | URBAN CORE
+        Hexo | Dev Space
     </title>
-    <!-- 引入样式 -->
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- 引入 Google Fonts (高端字体) -->
+    <!-- 引入 VS Code 字体和 UI 字体 -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
 <meta name="generator" content="Hexo 8.1.1"></head>
 
 <body>
 
-    <!-- 顶部导航 (透明磨砂感) -->
     <nav class="navbar">
-        <div class="logo">URBAN<span class="highlight">CORE</span>.</div>
-        <ul class="menu">
-            <li><a href="/">COLLECTIONS</a></li>
-            <li><a href="/archives">ARCHIVES</a></li>
-            <li><a href="/about">ABOUT</a></li>
-        </ul>
+        <div class="logo">&lt;Chris /&gt;</div> <!-- 名字这里自己改 -->
+        <div class="menu">
+            <a href="/">Home</a>
+            <a href="/archives">Blog</a>
+            <a href="/about">About</a>
+        </div>
     </nav>
 
-    <!-- 页面主体 -->
-    <main id="app">
-        <article class="post-content">
-    <h1 class="title">
-        Hello World
-    </h1>
-    <div class="meta">发布于: 2025-12-02
+    <main>
+        <div class="vscode-container">
+    <!-- 1. 假侧边栏 -->
+    <div class="vscode-sidebar">
+        <div class="icon-dot active"></div> <!-- 模拟文件浏览器图标 -->
+        <div class="icon-dot"></div> <!-- 模拟搜索图标 -->
+        <div class="icon-dot"></div> <!-- 模拟 Git 图标 -->
+        <div style="margin-top: auto; margin-bottom: 20px;" class="icon-dot"></div> <!-- 模拟设置 -->
     </div>
 
-    <hr>
+    <!-- 2. 主区域 -->
+    <div class="vscode-main">
 
-    <!-- 这里是文章正文 -->
-    <div class="content">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+        <!-- 顶部标签栏 -->
+        <div class="vscode-tab-bar">
+            <div class="vscode-tab">
+                <span class="file-icon">JS</span> <!-- 这里模拟文件图标 -->
+                Hello World.md
+            </div>
+        </div>
+
+        <!-- 面包屑导航 (可选) -->
+        <div style="padding: 5px 15px; color: #666; font-size: 0.8rem; border-bottom: 1px solid #2d2d2d;">
+            src > pages > hello-world
+        </div>
+
+        <!-- 文章正文 -->
+        <article class="post-content">
+            <h1 class="title">
+                Hello World
+            </h1>
+            <!-- 渲染 Markdown 内容 -->
+            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
@@ -54,22 +71,16 @@
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
+        </article>
+
     </div>
-</article>
+</div>
     </main>
 
-    <!-- 底部 -->
-    <footer>
-        <div class="footer-content">
-            <p>DESIGNED FOR THE FUTURE.</p>
-            <p>&copy; 2025
-                    John Doe
-            </p>
-        </div>
+    <footer style="text-align: center; padding: 40px; color: #666; font-size: 0.8rem;">
+        <p>Built with Hexo & VS Code Style</p>
     </footer>
 
-    <!-- 引入交互脚本 -->
-    <script src="/js/main.js"></script>
 </body>
 
 </html>

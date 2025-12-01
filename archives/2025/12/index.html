@@ -5,113 +5,83 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Hexo | URBAN CORE
+        Hexo | Dev Space
     </title>
-    <!-- 引入样式 -->
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- 引入 Google Fonts (高端字体) -->
+    <!-- 引入 VS Code 字体和 UI 字体 -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
 <meta name="generator" content="Hexo 8.1.1"></head>
 
 <body>
 
-    <!-- 顶部导航 (透明磨砂感) -->
     <nav class="navbar">
-        <div class="logo">URBAN<span class="highlight">CORE</span>.</div>
-        <ul class="menu">
-            <li><a href="/">COLLECTIONS</a></li>
-            <li><a href="/archives">ARCHIVES</a></li>
-            <li><a href="/about">ABOUT</a></li>
-        </ul>
+        <div class="logo">&lt;Chris /&gt;</div> <!-- 名字这里自己改 -->
+        <div class="menu">
+            <a href="/">Home</a>
+            <a href="/archives">Blog</a>
+            <a href="/about">About</a>
+        </div>
     </nav>
 
-    <!-- 页面主体 -->
-    <main id="app">
-        <!-- 1. 全屏首屏区域 -->
+    <main>
+        <!-- Hero 区域：模仿你提供的后两张图 -->
 <section class="hero-section">
-    <div class="hero-content">
-        <p class="hero-subtitle">SYSTEM STATUS: ONLINE</p>
-        <!-- 打字机效果的容器 -->
-        <h1 class="hero-title" id="typewriter-text" data-text="DEFINE YOUR REALITY."></h1>
-        <div class="hero-desc fade-in-up">
-            <p>打破界限，重塑规则。结合机能美学与代码逻辑，<br>构建属于你的数字终极装备。</p>
-        </div>
-        <a href="#latest" class="cta-button fade-in-up">EXPLORE SYSTEM</a>
+    <div class="status-badge">✨ Available for new projects</div>
+    <h1 class="hero-title">Software Engineer +<br>Technology Influencer</h1>
+    <p class="hero-desc">
+        云计算行业资深工程师，定义游戏行业云原生转型范式。<br>
+        AI 技术布道者 —— "任何人都可以用 AI 构建个性化生活。"
+    </p>
+    <div style="margin-top: 30px;">
+        <!-- 模拟社交按钮 -->
+        <a href="#"
+            style="background:white; color:black; padding: 10px 20px; border-radius: 20px; font-weight:600;">Let's
+            Talk</a>
     </div>
-    <!-- 背景图遮罩 -->
-    <div class="hero-overlay"></div>
 </section>
 
-<!-- 2. 文章展示区域 (错落布局) -->
-<section id="latest" class="content-section">
-    <div class="section-header scroll-reveal">
-        <h2>LATEST <span class="highlight">DROPS</span></h2>
-    </div>
+<!-- 文章列表：玻璃卡片 -->
+<section class="grid-section">
+    <div class="section-title">Articles & Notes</div>
 
-    <div class="post-grid">
+    <div class="card-grid">
         
-            <!-- 只有前 6 篇文章 -->
-            <article class="post-card scroll-reveal">
-                <div class="post-image-box">
-                    <!-- 随机配图，模拟高端展示 -->
-                    <img src="https://picsum.photos/800/600?random=0" alt="cover">
-                    <div class="post-overlay">
-                        <span class="read-more">READ LOG ///</span>
-                    </div>
+            <a href="/2025/12/02/test1/" class="glass-card">
+                <div class="card-tag">MARKDOWN</div>
+                <h3 class="card-title">
+                    test1
+                </h3>
+                <p class="card-excerpt">
+                    点击查看代码实现与详细分析...
+                </p>
+                <div style="margin-top: 15px; font-size: 0.8rem; color: #666;">
+                    Dec 02, 2025
                 </div>
-                <div class="post-info">
-                    <span class="post-date">/// 2025.12.02</span>
-                    <h3 class="post-title">
-                        <a href="/2025/12/02/test1/">
-                            test1
-                        </a>
-                    </h3>
-                    <p class="post-excerpt">
-                        Encrypted data content. Access required to view full details.
-                    </p>
-                </div>
-            </article>
+            </a>
             
-            <!-- 只有前 6 篇文章 -->
-            <article class="post-card scroll-reveal">
-                <div class="post-image-box">
-                    <!-- 随机配图，模拟高端展示 -->
-                    <img src="https://picsum.photos/800/600?random=1" alt="cover">
-                    <div class="post-overlay">
-                        <span class="read-more">READ LOG ///</span>
-                    </div>
+            <a href="/2025/12/02/hello-world/" class="glass-card">
+                <div class="card-tag">MARKDOWN</div>
+                <h3 class="card-title">
+                    Hello World
+                </h3>
+                <p class="card-excerpt">
+                    点击查看代码实现与详细分析...
+                </p>
+                <div style="margin-top: 15px; font-size: 0.8rem; color: #666;">
+                    Dec 02, 2025
                 </div>
-                <div class="post-info">
-                    <span class="post-date">/// 2025.12.02</span>
-                    <h3 class="post-title">
-                        <a href="/2025/12/02/hello-world/">
-                            Hello World
-                        </a>
-                    </h3>
-                    <p class="post-excerpt">
-                        Encrypted data content. Access required to view full details.
-                    </p>
-                </div>
-            </article>
+            </a>
             
     </div>
 </section>
     </main>
 
-    <!-- 底部 -->
-    <footer>
-        <div class="footer-content">
-            <p>DESIGNED FOR THE FUTURE.</p>
-            <p>&copy; 2025
-                    John Doe
-            </p>
-        </div>
+    <footer style="text-align: center; padding: 40px; color: #666; font-size: 0.8rem;">
+        <p>Built with Hexo & VS Code Style</p>
     </footer>
 
-    <!-- 引入交互脚本 -->
-    <script src="/js/main.js"></script>
 </body>
 
 </html>
