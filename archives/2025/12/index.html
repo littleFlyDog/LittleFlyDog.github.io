@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        SiyuanZhang | SJTU
+        siyuan&#39;s blog | SJTU
     </title>
 
     <!-- 加入这一行，引用图标 -->
@@ -105,19 +105,43 @@
 </section>
 
 <script>
-    // 打字机内容：可以改这里
     const text = "SIYUAN ZHANG.";
-    const typeWriterElement = document.getElementById('typewriter');
-    let i = 0;
+    const element = document.getElementById('typewriter');
+    let isDeleting = false; // 标记当前是"打字"还是"删除"状态
+    let textIndex = 0;
 
-    function typeWriter() {
-        if (i < text.length) {
-            typeWriterElement.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100); // 调整打字速度
+    function typeLoop() {
+        // 动态设置打字速度
+        let speed = 150; // 默认打字速度
+
+        if (isDeleting) {
+            // 如果是删除状态
+            element.innerHTML = text.substring(0, textIndex - 1);
+            textIndex--;
+            speed = 60; // 删除速度要比打字快一点，才帅
+        } else {
+            // 如果是打字状态
+            element.innerHTML = text.substring(0, textIndex + 1);
+            textIndex++;
         }
+
+        // 逻辑判断
+        if (!isDeleting && textIndex === text.length) {
+            // 打完了 -> 停顿 3秒 -> 准备删除
+            speed = 3000;
+            isDeleting = true;
+        } else if (isDeleting && textIndex === 0) {
+            // 删完了 -> 停顿 0.5秒 -> 准备重打
+            speed = 500;
+            isDeleting = false;
+        }
+
+        // 循环调用
+        setTimeout(typeLoop, speed);
     }
-    setTimeout(typeWriter, 500);
+
+    // 启动
+    setTimeout(typeLoop, 500);
 </script>
     </main>
 
