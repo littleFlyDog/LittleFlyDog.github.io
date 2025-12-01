@@ -81,19 +81,27 @@ ul {
 }
 
 /* 右侧 GitHub 图标 */
+/* 右侧图标区域容器 */
 .nav-right {
     display: flex;
     align-items: center;
+    gap: 20px;
+    /* 图标之间的间距 */
 }
 
-.github-icon svg {
+/* 通用图标样式 */
+.nav-icon svg {
     width: 24px;
     height: 24px;
     fill: #fff;
-    transition: 0.3s;
+    /* 默认白色 */
+    transition: transform 0.3s, fill 0.3s;
+    display: block;
+    /* 防止底部出现微小间隙 */
 }
 
-.github-icon:hover svg {
+/* 鼠标悬停效果：变绿 + 放大 */
+.nav-icon:hover svg {
     fill: var(--accent-color);
     transform: scale(1.1);
 }
