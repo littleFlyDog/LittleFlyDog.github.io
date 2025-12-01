@@ -5,81 +5,106 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Hexo | Dev Space
+        Hexo | Pro
     </title>
-    <!-- 引入 VS Code 字体和 UI 字体 -->
+    <!-- 引入 Apple 风格字体 -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 <meta name="generator" content="Hexo 8.1.1"></head>
 
 <body>
 
-    <nav class="navbar">
-        <div class="logo">&lt;Chris /&gt;</div> <!-- 名字这里自己改 -->
+    <nav class="SiyuanZhang">
+        <!-- 这里修改左上角的 Logo，<span>标签会让文字变蓝 -->
+        <div class="logo">LittleFlyDog<span>.io</span></div>
+
         <div class="menu">
-            <a href="/">Home</a>
-            <a href="/archives">Blog</a>
-            <a href="/about">About</a>
+            <a href="/">Overview</a>
+            <a href="/archives">Tech Specs</a>
+            <a href="/about">Buy</a> <!-- 模仿 Apple 官网菜单 -->
         </div>
     </nav>
 
     <main>
-        <!-- Hero 区域：模仿你提供的后两张图 -->
+        <!-- Hero 区域 -->
 <section class="hero-section">
-    <div class="status-badge">✨ Available for new projects</div>
-    <h1 class="hero-title">Software Engineer +<br>Technology Influencer</h1>
+    <!-- 标题容器 -->
+    <h1 class="hero-title">
+        <span id="typewriter"></span><span class="cursor"></span>
+    </h1>
     <p class="hero-desc">
-        云计算行业资深工程师，定义游戏行业云原生转型范式。<br>
-        AI 技术布道者 —— "任何人都可以用 AI 构建个性化生活。"
+        焕新设计，代码如诗。<br>用极致的简约，构建属于未来的数字装备。
     </p>
-    <div style="margin-top: 30px;">
-        <!-- 模拟社交按钮 -->
-        <a href="#"
-            style="background:white; color:black; padding: 10px 20px; border-radius: 20px; font-weight:600;">Let's
-            Talk</a>
+    <div>
+        <a href="#posts" class="cta-btn">进一步了解</a>
     </div>
 </section>
 
-<!-- 文章列表：玻璃卡片 -->
-<section class="grid-section">
-    <div class="section-title">Articles & Notes</div>
+<!-- 文章列表 -->
+<section id="posts" class="grid-section">
+    <div class="section-header">Latest Updates.</div>
 
     <div class="card-grid">
         
-            <a href="/2025/12/02/test1/" class="glass-card">
-                <div class="card-tag">MARKDOWN</div>
-                <h3 class="card-title">
-                    test1
-                </h3>
-                <p class="card-excerpt">
-                    点击查看代码实现与详细分析...
-                </p>
-                <div style="margin-top: 15px; font-size: 0.8rem; color: #666;">
-                    Dec 02, 2025
+            <a href="/2025/12/02/test1/" class="apple-card">
+                <div>
+                    <div class="card-date">
+                        2025年12月02日
+                    </div>
+                    <h3 class="card-title">
+                        test1
+                    </h3>
+                    <!-- 自动截取正文前 80 个字符，去除 HTML 标签 -->
+                    <div class="card-excerpt">
+                        
+                            thia is a test for hexo.thia is a test for hexo.12code here...
+                    </div>
                 </div>
+                <div class="card-link">阅读全文</div>
             </a>
             
-            <a href="/2025/12/02/hello-world/" class="glass-card">
-                <div class="card-tag">MARKDOWN</div>
-                <h3 class="card-title">
-                    Hello World
-                </h3>
-                <p class="card-excerpt">
-                    点击查看代码实现与详细分析...
-                </p>
-                <div style="margin-top: 15px; font-size: 0.8rem; color: #666;">
-                    Dec 02, 2025
+            <a href="/2025/12/02/hello-world/" class="apple-card">
+                <div>
+                    <div class="card-date">
+                        2025年12月02日
+                    </div>
+                    <h3 class="card-title">
+                        Hello World
+                    </h3>
+                    <!-- 自动截取正文前 80 个字符，去除 HTML 标签 -->
+                    <div class="card-excerpt">
+                        
+                            Welcome to Hexo! This is your very first post. Check documentation for more info...
+                    </div>
                 </div>
+                <div class="card-link">阅读全文</div>
             </a>
             
     </div>
 </section>
+
+<!-- 打字机脚本 (直接内嵌) -->
+<script>
+    const text = "Hello, World!"; // 这里改成你想要打的字，比如 "Hello, World."
+    const typeWriterElement = document.getElementById('typewriter');
+    let i = 0;
+
+    function typeWriter() {
+        if (i < text.length) {
+            typeWriterElement.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 150); // 打字速度，数值越大越慢
+        }
+    }
+    // 页面加载后延迟 0.5 秒开始打字
+    setTimeout(typeWriter, 500);
+</script>
     </main>
 
-    <footer style="text-align: center; padding: 40px; color: #666; font-size: 0.8rem;">
-        <p>Built with Hexo & VS Code Style</p>
+    <footer style="text-align: center; padding: 60px 20px; color: #444; font-size: 0.8rem; background: #000;">
+        <p>Designed by LittleFlyDog in China.</p>
     </footer>
 
 </body>
