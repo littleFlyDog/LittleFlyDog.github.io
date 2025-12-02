@@ -85,30 +85,34 @@
 <div id="content-start" style="background: var(--bg-color); min-height: 100vh; padding-top: 80px;">
 
     <section class="grid-section">
-        <!-- 统一的标题 -->
         <div class="section-header">OVERVIEW & RESEARCH_</div>
 
-        <div class="card-grid">
+        <!-- 1. 独立的 GitHub 全宽卡片 (放在 Grid 上面) -->
+        <!-- 直接复用 tech-card 样式，得到圆角和深色背景 -->
+        <div class="tech-card" style="margin-bottom: 30px;">
 
-            <!-- 1. 第一张卡片：GitHub 贡献图 (作为一张卡片混排，保证宽度对齐) -->
-            <div class="tech-card github-card">
-                <div class="card-header">
-                    <div class="card-dot close"></div>
-                    <div class="card-dot minimize"></div>
-                    <div class="card-dot maximize"></div>
-                </div>
-                <div class="card-date">// OPEN SOURCE ACTIVITY</div>
-                <!-- 这里的样式保证图表自适应卡片宽度 -->
-                <div style="width: 100%; overflow: hidden; margin-top: 10px;">
-                    <img src="https://ghchart.rshah.org/FFC800/littleFlyDog" alt="Github chart"
-                        style="width: 100%; object-fit: cover; object-position: left;">
-                </div>
+            <!-- W&B 风格红黄绿圆点 -->
+            <div class="card-header">
+                <div class="card-dot close"></div>
+                <div class="card-dot minimize"></div>
+                <div class="card-dot maximize"></div>
             </div>
 
-            <!-- 2. 后续卡片：文章列表 -->
+            <!-- 标题 -->
+            <div class="card-date" style="font-size: 1rem; font-weight: bold;">// OPEN SOURCE ACTIVITY</div>
+
+            <!-- 图表容器 -->
+            <div style="width: 100%; overflow-x: auto; margin-top: 15px;">
+                <img src="https://ghchart.rshah.org/FFC800/littleFlyDog" alt="Github chart"
+                    style="width: 100%; min-width: 600px;">
+            </div>
+        </div>
+
+        <!-- 2. 文章列表 (保持 Grid 网格布局) -->
+        <div class="card-grid">
             
                 <a href="/2025/12/02/test1/" class="tech-card">
-                    <!-- 增加 W&B 风格的顶部装饰点 -->
+                    <!-- 顶部装饰点 -->
                     <div class="card-header">
                         <div class="card-dot close"></div>
                         <div class="card-dot minimize"></div>
@@ -126,7 +130,7 @@
                 </a>
                 
                 <a href="/2025/12/02/hello-world/" class="tech-card">
-                    <!-- 增加 W&B 风格的顶部装饰点 -->
+                    <!-- 顶部装饰点 -->
                     <div class="card-header">
                         <div class="card-dot close"></div>
                         <div class="card-dot minimize"></div>
@@ -143,8 +147,8 @@
                     </div>
                 </a>
                 
-
         </div>
+
     </section>
 
 </div>
