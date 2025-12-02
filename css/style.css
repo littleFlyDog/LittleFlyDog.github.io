@@ -8,17 +8,16 @@
     --text-muted: #666666;
     /* 很暗的灰色，突出主次 */
     --accent-color: #FFC800;
-    /* 机能绿 (Cyber Lime) */
+    /* 暖黄色 */
 
     /* VS Code 颜色 */
     --vscode-bg: #1e1e1e;
     --vscode-sidebar: #252526;
     --vscode-header: #333333;
 
-    /* 字体配置：硬朗风格 */
+    /* 字体配置 */
     --font-main: 'Inter', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
-    /* 只有代码字体才够Geek */
 }
 
 body {
@@ -28,6 +27,35 @@ body {
     margin: 0;
     line-height: 1.6;
     overflow-x: hidden;
+
+    /* --- 新增：全局背景细线条网格 --- */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    /* 网格大小，越大越稀疏 */
+    background-attachment: fixed;
+    /* 网格固定，不随滚动条移动 */
+}
+
+/* --- 新增：浏览器右侧滚动条美化 --- */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+    /* 鼠标按住滚动条变黄 */
 }
 
 a {
@@ -62,7 +90,6 @@ ul {
     gap: 40px;
 }
 
-/* 菜单样式优化 */
 .menu {
     display: flex;
     gap: 30px;
@@ -80,36 +107,28 @@ ul {
     color: var(--accent-color);
 }
 
-/* 右侧 GitHub 图标 */
-/* 右侧图标区域容器 */
 .nav-right {
     display: flex;
     align-items: center;
     gap: 20px;
-    /* 图标之间的间距 */
 }
 
-/* 通用图标样式 */
 .nav-icon svg {
     width: 24px;
     height: 24px;
     fill: #fff;
-    /* 默认白色 */
     transition: transform 0.3s, fill 0.3s;
     display: block;
-    /* 防止底部出现微小间隙 */
 }
 
-/* 鼠标悬停效果：变绿 + 放大 */
 .nav-icon:hover svg {
     fill: var(--accent-color);
     transform: scale(1.1);
 }
 
-/* --- Hero 区域 (排版核心) --- */
+/* --- Hero 区域 --- */
 .hero-section {
     height: 100vh;
-    /* 强制占满一屏高度 */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -117,30 +136,23 @@ ul {
     align-items: center;
     text-align: center;
     position: relative;
-    /* 为了放底部的箭头 */
-    /* 背景保持之前的网格设置 */
 }
 
-/* 打字机大标题 */
 .hero-title {
     font-family: var(--font-main);
     font-size: 5rem;
-    /* 极大 */
     font-weight: 900;
     margin: 0;
     color: var(--text-main);
     text-transform: uppercase;
-    /* 强制大写 */
     letter-spacing: -2px;
     line-height: 1.1;
 }
 
-/* 光标 */
 .cursor {
     display: inline-block;
     width: 15px;
     height: 60px;
-    /* 匹配字体高度 */
     background-color: var(--accent-color);
     animation: blink 1s infinite;
     vertical-align: sub;
@@ -159,20 +171,16 @@ ul {
     }
 }
 
-/* 副标题 (极小、灰色) */
 .hero-desc {
     margin-top: 30px;
     color: var(--text-muted);
     font-size: 0.9rem;
-    /* 很小 */
     line-height: 1.8;
     font-weight: 400;
     font-family: var(--font-mono);
-    /* 用代码字体显示个人信息 */
     letter-spacing: 1px;
 }
 
-/* 绿色按钮 */
 .cta-btn {
     margin-top: 50px;
     background-color: transparent;
@@ -190,13 +198,12 @@ ul {
 .cta-btn:hover {
     background-color: var(--accent-color);
     color: #000;
-    box-shadow: 0 0 20px rgba(204, 255, 0, 0.4);
+    box-shadow: 0 0 20px rgba(255, 200, 0, 0.4);
 }
 
-/* 确保两个区块的内边距和宽度一致，从而实现左对齐 */
+/* --- 内容布局 --- */
 .grid-section {
     padding: 40px 10%;
-    /* 左右留白 10% */
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -209,21 +216,17 @@ ul {
     padding-left: 15px;
 }
 
-/* --- 卡片通用样式 (W&B 风格) --- */
+/* --- 卡片样式 --- */
 .card-grid {
     display: grid;
-    /* 自动适应宽度，卡片最小宽度 320px，如果屏幕够宽就并排 */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
 .tech-card {
     background: #111111;
-    /* 极深灰背景，不像纯黑那么死板 */
     border: 1px solid #333;
-    /* 细腻的边框 */
     border-radius: 12px;
-    /* 关键：圆角！ */
     padding: 20px;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
@@ -232,14 +235,12 @@ ul {
     flex-direction: column;
 }
 
-/* 悬停效果：边框变黄，轻微上浮 */
 .tech-card:hover {
     border-color: var(--accent-color);
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* 卡片顶部的 W&B 风格装饰点 */
 .card-header {
     display: flex;
     gap: 6px;
@@ -257,25 +258,18 @@ ul {
     background-color: #ff5f56;
 }
 
-/* 红 */
 .minimize {
     background-color: #ffbd2e;
 }
 
-/* 黄 */
 .maximize {
     background-color: #27c93f;
 }
-
-/* 绿 */
 
 .tech-card:hover .card-dot {
     opacity: 1;
 }
 
-/* 悬停时圆点变亮 */
-
-/* 文字样式调整 */
 .card-date {
     color: var(--accent-color);
     font-family: var(--font-mono);
@@ -298,21 +292,14 @@ ul {
     line-height: 1.6;
 }
 
-/* 针对 GitHub 卡片的特殊处理 */
-.github-card {
-    /* 如果你想让 GitHub 图表卡片横跨两列，可以取消下面这行的注释 */
-    /* grid-column: span 2; */
-}
-
-/* 手机端 GitHub 图表强制不跨列 */
+/* 手机端适配 */
 @media (max-width: 768px) {
     .github-card {
         grid-column: span 1 !important;
     }
 }
 
-
-/* --- 文章页 VS Code 修复 --- */
+/* --- VS Code 文章页 --- */
 .vscode-wrapper {
     max-width: 90%;
     margin: 50px auto;
@@ -340,18 +327,6 @@ ul {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-}
-
-.close {
-    background: #ff5f56;
-}
-
-.minimize {
-    background: #ffbd2e;
-}
-
-.maximize {
-    background: #27c93f;
 }
 
 .vscode-body {
@@ -389,7 +364,6 @@ ul {
     flex: 1;
 }
 
-/* !!! 关键修复：VS Code 标题颜色 !!! */
 .post-content h1 {
     color: #569cd6;
     font-size: 2.2rem;
@@ -398,33 +372,17 @@ ul {
     margin-top: 0;
 }
 
-/* 蓝色 */
 .post-content h2 {
     color: #4ec9b0;
     font-size: 1.8rem;
     margin-top: 40px;
 }
 
-/* 青色 */
 .post-content h3 {
     color: #dcdcaa;
     font-size: 1.5rem;
     margin-top: 30px;
 }
-
-/* 黄色 */
-.post-content h4 {
-    color: #c586c0;
-    font-size: 1.2rem;
-}
-
-/* 紫色 */
-.post-content h5,
-.post-content h6 {
-    color: #9cdcfe;
-}
-
-/* 浅蓝 */
 
 .post-content p {
     color: #cccccc;
