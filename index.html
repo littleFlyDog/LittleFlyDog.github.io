@@ -81,29 +81,39 @@
     </div>
 </section>
 
-<!-- 第二页：内容区域 (添加 id="content-start") -->
+<!-- 第二页：内容区域 -->
 <div id="content-start" style="background: var(--bg-color); min-height: 100vh; padding-top: 80px;">
 
-    <!-- 1. GitHub 图表区域 (复用 grid-section 的样式以保证对齐) -->
-    <section class="grid-section" style="padding-bottom: 0;">
-        <!-- 标题与下面的文章列表保持一致 -->
-        <div class="section-header">OPEN SOURCE ACTIVITY_</div>
-
-        <!-- 图片容器 -->
-        <div style="width: 100%; overflow-x: auto;">
-            <!-- 注意：这里把颜色改成了 ffc800 以匹配黄色主题 -->
-            <img src="https://ghchart.rshah.org/ffc800/littleFlyDog" alt="Github chart"
-                style="width: 100%; min-width: 600px; filter: invert(0) hue-rotate(0deg);">
-        </div>
-    </section>
-
-    <!-- 2. 文章列表区域 -->
-    <section id="posts" class="grid-section">
-        <div class="section-header">RESEARCH & NOTES_</div>
+    <section class="grid-section">
+        <!-- 统一的标题 -->
+        <div class="section-header">OVERVIEW & RESEARCH_</div>
 
         <div class="card-grid">
+
+            <!-- 1. 第一张卡片：GitHub 贡献图 (作为一张卡片混排，保证宽度对齐) -->
+            <div class="tech-card github-card">
+                <div class="card-header">
+                    <div class="card-dot close"></div>
+                    <div class="card-dot minimize"></div>
+                    <div class="card-dot maximize"></div>
+                </div>
+                <div class="card-date">// OPEN SOURCE ACTIVITY</div>
+                <!-- 这里的样式保证图表自适应卡片宽度 -->
+                <div style="width: 100%; overflow: hidden; margin-top: 10px;">
+                    <img src="https://ghchart.rshah.org/FFC800/littleFlyDog" alt="Github chart"
+                        style="width: 100%; object-fit: cover; object-position: left;">
+                </div>
+            </div>
+
+            <!-- 2. 后续卡片：文章列表 -->
             
                 <a href="/2025/12/02/test1/" class="tech-card">
+                    <!-- 增加 W&B 风格的顶部装饰点 -->
+                    <div class="card-header">
+                        <div class="card-dot close"></div>
+                        <div class="card-dot minimize"></div>
+                    </div>
+
                     <div class="card-date">// 2025-12-02
                     </div>
                     <h3 class="card-title">
@@ -116,6 +126,12 @@
                 </a>
                 
                 <a href="/2025/12/02/hello-world/" class="tech-card">
+                    <!-- 增加 W&B 风格的顶部装饰点 -->
+                    <div class="card-header">
+                        <div class="card-dot close"></div>
+                        <div class="card-dot minimize"></div>
+                    </div>
+
                     <div class="card-date">// 2025-12-02
                     </div>
                     <h3 class="card-title">
@@ -123,10 +139,11 @@
                     </h3>
                     <div class="card-excerpt">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro...
+                            Welcome to Hexo! This is your very first post. Check documentation for more info...
                     </div>
                 </a>
                 
+
         </div>
     </section>
 
@@ -160,28 +177,6 @@
     }
     setTimeout(typeLoop, 500);
 </script>
-
-<!-- 添加箭头跳动动画样式 -->
-<style>
-    @keyframes bounce {
-
-        0%,
-        20%,
-        50%,
-        80%,
-        100% {
-            transform: translateY(0);
-        }
-
-        40% {
-            transform: translateY(-10px);
-        }
-
-        60% {
-            transform: translateY(-5px);
-        }
-    }
-</style>
     </main>
 
     <footer

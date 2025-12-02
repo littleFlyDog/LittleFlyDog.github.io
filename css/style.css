@@ -209,43 +209,106 @@ ul {
     padding-left: 15px;
 }
 
+/* --- 卡片通用样式 (W&B 风格) --- */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* 自动适应宽度，卡片最小宽度 320px，如果屏幕够宽就并排 */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
 .tech-card {
-    background: var(--card-bg);
-    border: 1px solid #222;
-    padding: 25px;
-    transition: 0.3s;
+    background: #111111;
+    /* 极深灰背景，不像纯黑那么死板 */
+    border: 1px solid #333;
+    /* 细腻的边框 */
+    border-radius: 12px;
+    /* 关键：圆角！ */
+    padding: 20px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
+/* 悬停效果：边框变黄，轻微上浮 */
 .tech-card:hover {
     border-color: var(--accent-color);
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
+/* 卡片顶部的 W&B 风格装饰点 */
+.card-header {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.card-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.close {
+    background-color: #ff5f56;
+}
+
+/* 红 */
+.minimize {
+    background-color: #ffbd2e;
+}
+
+/* 黄 */
+.maximize {
+    background-color: #27c93f;
+}
+
+/* 绿 */
+
+.tech-card:hover .card-dot {
+    opacity: 1;
+}
+
+/* 悬停时圆点变亮 */
+
+/* 文字样式调整 */
 .card-date {
     color: var(--accent-color);
     font-family: var(--font-mono);
-    font-size: 0.8rem;
-    margin-bottom: 10px;
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+    opacity: 0.8;
 }
 
 .card-title {
-    font-size: 1.3rem;
-    margin: 10px 0;
+    font-size: 1.4rem;
+    margin: 0 0 10px 0;
     font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
 }
 
 .card-excerpt {
-    color: #666;
+    color: #888;
     font-size: 0.9rem;
     line-height: 1.6;
+}
+
+/* 针对 GitHub 卡片的特殊处理 */
+.github-card {
+    /* 如果你想让 GitHub 图表卡片横跨两列，可以取消下面这行的注释 */
+    /* grid-column: span 2; */
+}
+
+/* 手机端 GitHub 图表强制不跨列 */
+@media (max-width: 768px) {
+    .github-card {
+        grid-column: span 1 !important;
+    }
 }
 
 
