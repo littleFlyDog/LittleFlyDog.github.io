@@ -32,7 +32,7 @@ body {
     background-image:
         linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
+    background-size: 40px 40px;
     /* 网格大小，越大越稀疏 */
     background-attachment: fixed;
     /* 网格固定，不随滚动条移动 */
