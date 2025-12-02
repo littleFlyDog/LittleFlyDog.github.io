@@ -56,104 +56,132 @@
     </nav>
 
     <main>
-        <section class="hero-section">
-    <!-- 大标题：打字机效果 -->
+        <!-- 第一页：全屏 Hero (强制高度 100vh) -->
+<section class="hero-section" style="height: 100vh; box-sizing: border-box;">
     <h1 class="hero-title">
         <span id="typewriter"></span><span class="cursor"></span>
     </h1>
 
-    <!-- 副标题：个人信息 (字小、灰色、代码风) -->
     <p class="hero-desc">
-        siyuan's blog<br>
+        SiyuanZhang<br>
         Undergraduate student of Shanghai Jiao Tong University<br>
         DL / CV / LLM
     </p>
 
+    <!-- 点击按钮滑向第二页 -->
     <div>
-        <a href="/about" class="cta-btn">About Me</a>
+        <a href="#content-start" class="cta-btn">About Me</a>
+    </div>
+
+    <!-- 添加一个向下的小箭头提示 -->
+    <div style="position: absolute; bottom: 30px; animation: bounce 2s infinite;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-color)" stroke-width="2">
+            <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+        </svg>
     </div>
 </section>
 
-<section style="max-width: 900px; margin: 0 auto; padding: 20px; text-align: center;">
-    <div class="section-header" style="text-align: left; margin-bottom: 20px;">OPEN SOURCE ACTIVITY_</div>
-    <!-- 把 littleFlyDog 换成你自己的 GitHub 用户名 -->
-    <img src="https://ghchart.rshah.org/ccff00/littleFlyDog" alt="Github chart"
-        style="width: 100%; filter: invert(0) hue-rotate(0deg);">
-    <p style="color: #666; font-size: 0.8rem; margin-top: 10px;">Powered by GitHub API</p>
-</section>
+<!-- 第二页：内容区域 (添加 id="content-start") -->
+<div id="content-start" style="background: var(--bg-color); min-height: 100vh; padding-top: 80px;">
 
-<!-- 文章列表 -->
-<section id="posts" class="grid-section">
-    <div class="section-header">RESEARCH & NOTES_</div>
+    <!-- 1. GitHub 图表区域 (复用 grid-section 的样式以保证对齐) -->
+    <section class="grid-section" style="padding-bottom: 0;">
+        <!-- 标题与下面的文章列表保持一致 -->
+        <div class="section-header">OPEN SOURCE ACTIVITY_</div>
 
-    <div class="card-grid">
-        
-            <a href="/2025/12/02/test1/" class="tech-card">
-                <div class="card-date">// 2025-12-02
-                </div>
-                <h3 class="card-title">
-                    test1
-                </h3>
-                <div class="card-excerpt">
-                    
-                        thia is a test for hexo.thia is a test for hexo.12code here...
-                </div>
-            </a>
+        <!-- 图片容器 -->
+        <div style="width: 100%; overflow-x: auto;">
+            <!-- 注意：这里把颜色改成了 ffc800 以匹配黄色主题 -->
+            <img src="https://ghchart.rshah.org/ffc800/littleFlyDog" alt="Github chart"
+                style="width: 100%; min-width: 600px; filter: invert(0) hue-rotate(0deg);">
+        </div>
+    </section>
+
+    <!-- 2. 文章列表区域 -->
+    <section id="posts" class="grid-section">
+        <div class="section-header">RESEARCH & NOTES_</div>
+
+        <div class="card-grid">
             
-            <a href="/2025/12/02/hello-world/" class="tech-card">
-                <div class="card-date">// 2025-12-02
-                </div>
-                <h3 class="card-title">
-                    Hello World
-                </h3>
-                <div class="card-excerpt">
-                    
-                        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro...
-                </div>
-            </a>
-            
-    </div>
-</section>
+                <a href="/2025/12/02/test1/" class="tech-card">
+                    <div class="card-date">// 2025-12-02
+                    </div>
+                    <h3 class="card-title">
+                        test1
+                    </h3>
+                    <div class="card-excerpt">
+                        
+                            thia is a test for hexo.thia is a test for hexo.12code here...
+                    </div>
+                </a>
+                
+                <a href="/2025/12/02/hello-world/" class="tech-card">
+                    <div class="card-date">// 2025-12-02
+                    </div>
+                    <h3 class="card-title">
+                        Hello World
+                    </h3>
+                    <div class="card-excerpt">
+                        
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro...
+                    </div>
+                </a>
+                
+        </div>
+    </section>
 
+</div>
+
+<!-- 脚本保持不变 -->
 <script>
     const text = "SIYUAN ZHANG.";
     const element = document.getElementById('typewriter');
-    let isDeleting = false; // 标记当前是"打字"还是"删除"状态
+    let isDeleting = false;
     let textIndex = 0;
 
     function typeLoop() {
-        // 动态设置打字速度
-        let speed = 150; // 默认打字速度
-
+        let speed = 150;
         if (isDeleting) {
-            // 如果是删除状态
             element.innerHTML = text.substring(0, textIndex - 1);
             textIndex--;
-            speed = 60; // 删除速度要比打字快一点，才帅
+            speed = 60;
         } else {
-            // 如果是打字状态
             element.innerHTML = text.substring(0, textIndex + 1);
             textIndex++;
         }
-
-        // 逻辑判断
         if (!isDeleting && textIndex === text.length) {
-            // 打完了 -> 停顿 3秒 -> 准备删除
             speed = 3000;
             isDeleting = true;
         } else if (isDeleting && textIndex === 0) {
-            // 删完了 -> 停顿 0.5秒 -> 准备重打
             speed = 500;
             isDeleting = false;
         }
-
-        // 循环调用
         setTimeout(typeLoop, speed);
     }
-
-    // 启动
     setTimeout(typeLoop, 500);
 </script>
+
+<!-- 添加箭头跳动动画样式 -->
+<style>
+    @keyframes bounce {
+
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-10px);
+        }
+
+        60% {
+            transform: translateY(-5px);
+        }
+    }
+</style>
     </main>
 
     <footer
@@ -176,7 +204,7 @@
         // 只有在屏幕宽度大于 768px (电脑) 时才启用，手机上启用太耗电
         if (window.innerWidth > 768) {
             VANTA.NET({
-                el: "body", // 作用在 body 上
+                el: "body",
                 mouseControls: true,
                 touchControls: true,
                 gyroControls: false,
@@ -184,11 +212,14 @@
                 minWidth: 200.00,
                 scale: 1.00,
                 scaleMobile: 1.00,
-                color: 0xccff00,       // 连线的颜色 (你的荧光绿)
-                backgroundColor: 0x050505, // 背景色 (你的黑色)
-                points: 10.00,         // 点的数量
-                maxDistance: 20.00,    // 连线距离
-                spacing: 18.00         // 空间间隔
+
+                // --- 修改这里 ---
+                color: 0xFFC800,       // 改成黄色
+                backgroundColor: 0x050505,
+                points: 8.00,          // 原来是10，改小一点
+                maxDistance: 22.00,    // 连线距离稍大
+                spacing: 40.00         // 原来是18，改大到40，线条就会变得很稀疏
+                // ----------------
             })
         }
     </script>

@@ -131,7 +131,7 @@
         // 只有在屏幕宽度大于 768px (电脑) 时才启用，手机上启用太耗电
         if (window.innerWidth > 768) {
             VANTA.NET({
-                el: "body", // 作用在 body 上
+                el: "body",
                 mouseControls: true,
                 touchControls: true,
                 gyroControls: false,
@@ -139,11 +139,14 @@
                 minWidth: 200.00,
                 scale: 1.00,
                 scaleMobile: 1.00,
-                color: 0xccff00,       // 连线的颜色 (你的荧光绿)
-                backgroundColor: 0x050505, // 背景色 (你的黑色)
-                points: 10.00,         // 点的数量
-                maxDistance: 20.00,    // 连线距离
-                spacing: 18.00         // 空间间隔
+
+                // --- 修改这里 ---
+                color: 0xFFC800,       // 改成黄色
+                backgroundColor: 0x050505,
+                points: 8.00,          // 原来是10，改小一点
+                maxDistance: 22.00,    // 连线距离稍大
+                spacing: 40.00         // 原来是18，改大到40，线条就会变得很稀疏
+                // ----------------
             })
         }
     </script>

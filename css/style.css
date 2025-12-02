@@ -7,7 +7,7 @@
     --text-main: #ffffff;
     --text-muted: #666666;
     /* 很暗的灰色，突出主次 */
-    --accent-color: #ccff00;
+    --accent-color: #FFC800;
     /* 机能绿 (Cyber Lime) */
 
     /* VS Code 颜色 */
@@ -108,18 +108,17 @@ ul {
 
 /* --- Hero 区域 (排版核心) --- */
 .hero-section {
-    min-height: 80vh;
-    /* 占据大部分屏幕 */
+    height: 100vh;
+    /* 强制占满一屏高度 */
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-    /*由于背景太黑，加一点极淡的网格增加高级感*/
+    position: relative;
+    /* 为了放底部的箭头 */
+    /* 背景保持之前的网格设置 */
 }
 
 /* 打字机大标题 */
@@ -194,9 +193,10 @@ ul {
     box-shadow: 0 0 20px rgba(204, 255, 0, 0.4);
 }
 
-/* --- 卡片区域 --- */
+/* 确保两个区块的内边距和宽度一致，从而实现左对齐 */
 .grid-section {
-    padding: 50px 10%;
+    padding: 40px 10%;
+    /* 左右留白 10% */
     max-width: 1400px;
     margin: 0 auto;
 }
