@@ -19,6 +19,9 @@
 <meta name="generator" content="Hexo 8.1.1"></head>
 
 <body>
+    <div id="progress-bar"
+        style="position: fixed; top: 0; left: 0; height: 3px; background: #ccff00; width: 0%; z-index: 9999; transition: width 0.1s;">
+    </div>
 
     <nav class="navbar">
         <!-- 左侧：菜单 -->
@@ -125,7 +128,14 @@
         style="text-align: center; padding: 50px; color: #444; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace;">
         <p>SiyuanZhang @ SJTU | SYSTEM ONLINE</p>
     </footer>
-
+    <script>
+        window.onscroll = function () {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
 </body>
 
 </html>

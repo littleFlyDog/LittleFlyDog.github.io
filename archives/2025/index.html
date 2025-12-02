@@ -19,6 +19,9 @@
 <meta name="generator" content="Hexo 8.1.1"></head>
 
 <body>
+    <div id="progress-bar"
+        style="position: fixed; top: 0; left: 0; height: 3px; background: #ccff00; width: 0%; z-index: 9999; transition: width 0.1s;">
+    </div>
 
     <nav class="navbar">
         <!-- 左侧：菜单 -->
@@ -69,6 +72,14 @@
     <div>
         <a href="/about" class="cta-btn">About Me</a>
     </div>
+</section>
+
+<section style="max-width: 900px; margin: 0 auto; padding: 20px; text-align: center;">
+    <div class="section-header" style="text-align: left; margin-bottom: 20px;">OPEN SOURCE ACTIVITY_</div>
+    <!-- 把 littleFlyDog 换成你自己的 GitHub 用户名 -->
+    <img src="https://ghchart.rshah.org/ccff00/littleFlyDog" alt="Github chart"
+        style="width: 100%; filter: invert(0) hue-rotate(0deg);">
+    <p style="color: #666; font-size: 0.8rem; margin-top: 10px;">Powered by GitHub API</p>
 </section>
 
 <!-- 文章列表 -->
@@ -149,7 +160,14 @@
         style="text-align: center; padding: 50px; color: #444; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace;">
         <p>SiyuanZhang @ SJTU | SYSTEM ONLINE</p>
     </footer>
-
+    <script>
+        window.onscroll = function () {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
 </body>
 
 </html>
