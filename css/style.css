@@ -411,3 +411,11 @@ ul {
     font-family: var(--font-mono);
     border: 1px solid #333;
 }
+
+.article-entry img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    /* 让图片居中 */
+}
