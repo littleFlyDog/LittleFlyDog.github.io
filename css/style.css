@@ -412,10 +412,19 @@ ul {
     border: 1px solid #333;
 }
 
-.article-entry img {
+.post-content img {
     max-width: 100%;
+    /* 限制最大宽度为父容器宽度的100% */
     height: auto;
+    /* 高度自动，防止变形 */
     display: block;
-    margin: 10px auto;
-    /* 让图片居中 */
+    /* 让图片独占一行 */
+    margin: 30px auto;
+    /* 上下留白30px，左右自动居中 */
+    border-radius: 8px;
+    /* 图片圆角 */
+    border: 1px solid #333;
+    /* 给图片加一个深灰边框，更有质感 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* 轻微阴影 */
 }
