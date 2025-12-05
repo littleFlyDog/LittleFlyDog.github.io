@@ -417,7 +417,7 @@ ul {
 .article-entry img,
 .article-inner img,
 .content img {
-    max-width: 20% !important;
+    max-width: 60% !important;
     /* 宽度最大只能是容器的100%，不能溢出 */
     height: auto !important;
     /* 高度自动缩放，保证图片不变形 */
@@ -439,6 +439,33 @@ ul {
     /* 允许长单词换行 */
     overflow-wrap: break-word !important;
     /* 现代浏览器标准：内容溢出时换行 */
-    max-width: 30% !important;
+    max-width: 70% !important;
     /* 确保不超过父容器宽度 */
+}
+
+/* --- 暴力修复：代码块强制换行 --- */
+.post-content pre,
+.post-content code,
+.article-entry pre,
+.article-entry code,
+.highlight,
+.highlight table,
+.highlight .code {
+    white-space: pre-wrap !important;
+    /* 允许保留空格的同时换行 */
+    word-wrap: break-word !important;
+    /* 允许长单词换行 */
+    overflow-wrap: break-word !important;
+    /* 溢出时换行 */
+    max-width: 80% !important;
+    /* 限制最大宽度 */
+    box-sizing: border-box !important;
+    /* 边框算在宽度内 */
+}
+
+/* 如果是 Hexo 默认的代码高亮表格结构，需要额外限制 */
+.highlight {
+    display: block !important;
+    overflow-x: hidden !important;
+    /* 隐藏横向滚动条，强制换行 */
 }
