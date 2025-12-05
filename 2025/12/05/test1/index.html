@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        siyuan&#39;s blog | SJTU
+    </title>
+    <!-- 图标 -->
+    <link rel="icon" href="/img/favicon.png">
+    <!-- 字体 -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- 样式 -->
+    <link rel="stylesheet" href="/css/style.css">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+    <!-- 顶部进度条：颜色已改为 FFC800 (黄色) -->
+    <div id="progress-bar"
+        style="position: fixed; top: 0; left: 0; height: 3px; background: #FFC800; width: 0%; z-index: 9999; transition: width 0.1s;">
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="menu">
+                <a href="/">Home</a>
+                <a href="/archives">Archives</a>
+                <a href="/about">About Me</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="mailto:siyuanzhang@sjtu.edu.cn" class="nav-icon" title="Email Me">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+            </a>
+            <a href="https://github.com/littleFlyDog" target="_blank" class="nav-icon" title="Visit my GitHub">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="vscode-wrapper">
+    <!-- 标题栏 -->
+    <div class="window-header">
+        <div class="traffic-lights">
+            <div class="dot close"></div>
+            <div class="dot minimize"></div>
+            <div class="dot maximize"></div>
+        </div>
+        <!-- 标题栏文字居中 -->
+        <div style="margin: 0 auto; color: #999; font-size: 0.8rem; font-family: sans-serif;">
+            Leo1.0 - Hello World!
+        </div>
+    </div>
+
+    <div class="vscode-body">
+        <!-- 侧边栏 -->
+        <div class="vscode-sidebar">
+            <div class="side-icon active"></div>
+            <div class="side-icon"></div>
+            <div class="side-icon"></div>
+        </div>
+
+        <!-- 内容区 -->
+        <div style="flex: 1; background: var(--vscode-bg);">
+            <!-- 标签页 -->
+            <div style="background: #1e1e1e; height: 35px; display: flex; border-bottom: 1px solid #252526;">
+                <div
+                    style="padding: 0 20px; display: flex; align-items: center; color: #fff; border-top: 1px solid var(--accent-color); background: #1e1e1e; font-size: 0.8rem; border-right: 1px solid #252526;">
+                    <span style="color: #f1e05a; margin-right: 8px; font-weight: bold;">JS</span>
+                    Leo1.0.md
+                </div>
+            </div>
+
+            <!-- 面包屑 -->
+            <div style="padding: 10px 40px; color: #555; font-size: 0.8rem; font-family: monospace;">
+                src > posts > leo1.0
+            </div>
+
+            <!-- 正文 -->
+            <article class="post-content">
+                <h1>
+                    Leo1.0
+                </h1>
+                <div style="color: #666; margin-bottom: 30px; font-family: monospace; font-size: 0.8rem;">
+                    // Author: SiyuanZhang<br>
+                    // Published: 2025-12-05
+                </div>
+
+                <p><img src="https://socialify.git.ci/littleFlyDog/Leo1.0/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Plus&theme=Light" alt="Project Card"></p>
+<h2 id="Model-introduction"><a href="#Model-introduction" class="headerlink" title="Model introduction"></a>Model introduction</h2><p><strong>This is a model fine-tuned using QLoRA based on the LLaMA-2-7b.</strong>,this project can help you experience the process of fine-tuning large models, and it only requires 16GB of VRAM and 18GB of RAM,and you can even reduce VRAM usage further by adjusting the settings.</p>
+<ol>
+<li>pretrained model</li>
+</ol>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://huggingface.co/meta-llama/Llama-2-7b-hf">Llama-2-7b-hf</a></li>
+</ul>
+<ol start="2">
+<li>datasets</li>
+</ol>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://huggingface.co/datasets/llm-wizard/alpaca-gpt4-data-zh">llm-wizard&#x2F;alpaca-gpt4-data-zh</a></li>
+</ul>
+<h2 id="Hardware"><a href="#Hardware" class="headerlink" title="Hardware"></a>Hardware</h2><ul>
+<li>RTX 3090</li>
+</ul>
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><ul>
+<li>You can refer to requirements.txt</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install torch transformers datasets peft wandb </span><br></pre></td></tr></table></figure>
+<h2 id="Quick-start"><a href="#Quick-start" class="headerlink" title="Quick start"></a>Quick start</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python ft.py</span><br><span class="line">python inferency.py</span><br></pre></td></tr></table></figure>
+<h2 id="Fine-tuning-outcome"><a href="#Fine-tuning-outcome" class="headerlink" title="Fine-tuning outcome"></a>Fine-tuning outcome</h2><ol>
+<li>train loss<br><img src="/assets/trainloss.png" alt="trainloss"></li>
+<li>eval loss<br><img src="/assets/evalloss.png" alt="evalloss"></li>
+</ol>
+<h2 id="examples"><a href="#examples" class="headerlink" title="examples"></a>examples</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Leo1.0:我是基于Llama-2-7b模型微调的聊天机器人Leo1.0,可以回答各种问题</span><br><span class="line">Leo1.0:请你选择单轮无记忆对话模式(1)或多轮记忆对话模式(2)</span><br><span class="line">Leo1.0:输入1或2后回车即可</span><br><span class="line">1</span><br><span class="line">Leo1.0:单轮无记忆对话模式已启动,输入bye退出</span><br><span class="line">user: 武汉今天温度为零下10摄氏度,应该穿什么衣服?</span><br><span class="line">深度思考中，请稍候...</span><br><span class="line">Leo1.0: 在武汉的温度降到零下10摄氏度时，建议穿一条厚重的外套和其他相关的冰雪保护装备，比如冬袜、靴子、手套等。此外，你也需要确保身体有足够的保暖效果，所以还可以考虑选用牛仔裤或者保温围甲的运动装备，以及充足的防寒衣物。不过，最好是查看当地的天气预报并按照气象部门的温度建议进行搭配，才能确定最佳的衣物选择。</span><br><span class="line">user: 8+5等于多少?</span><br><span class="line">深度思考中，请稍候...</span><br><span class="line">Leo1.0: 两个数字相加的结果是13.</span><br><span class="line">user: 如何追求女生?</span><br><span class="line">深度思考中，请稍候...</span><br><span class="line">Leo1.0: 在要想對一个女性申請，追求或者準備接受她的邀請之前，你必須了解和理解有关人際交往、情侶關係和正式拘束的方面。除了具备聲望、外表和金錢能力外，真正成功地追求一位憧憬的女性还需要知道如何說服她去與自己結合。以下是一些有助于追求女性的技巧和建議：</span><br><span class="line"></span><br><span class="line">1. 用好口語 - 良好的口才、身手配合和说话技巧能使你更加出色。在初次推銷時，不要直接告訴她你想意儀。多讓她想象一些。</span><br><span class="line"></span><br><span class="line">2. 温柔的接吻 - 敏銳地观察到她是否打算与你接吻并向她提出接吻是一项重要的技巧。假如她沒有做出明确的反应，不要立刻開始。等她做出回应，再次請求她接吻就可以。</span><br><span class="line"></span><br><span class="line">3. 透明性和隱瞒 - 說清楚是非常重要。保持透明度能讓两人在日后也没有困難。同时，也要控制逃避和隱瞒。承認你的誤解和错誤，并在必要時向她道歉是非常重要的技巧。</span><br><span class="line"></span><br><span class="line">4. 靠近她 - 作为男子，擁有自信和勇氣，接近她是非常重要的。不管你是在召唤她或在離別，都要靠近她。那麼她就会知道你的意味。</span><br></pre></td></tr></table></figure>
+            </article>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <footer
+        style="text-align: center; padding: 50px; color: #444; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace;">
+        <p>SiyuanZhang @ SJTU | SYSTEM ONLINE</p>
+    </footer>
+
+    <!-- 脚本部分 -->
+    <script>
+        window.onscroll = function () {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+    <script>
+        if (window.innerWidth > 768) {
+            VANTA.NET({
+                el: "body",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0xFFC800,       // 已改为黄色
+                backgroundColor: 0x050505,
+                points: 8.00,
+                maxDistance: 22.00,
+                spacing: 40.00
+            })
+        }
+    </script>
+</body>
+
+</html>
