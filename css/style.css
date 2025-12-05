@@ -413,7 +413,7 @@ ul {
 }
 
 .post-content img {
-    max-width: 100%;
+    max-width: 50%;
     /* 限制最大宽度为父容器宽度的100% */
     height: auto;
     /* 高度自动，防止变形 */
