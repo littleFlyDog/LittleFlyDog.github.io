@@ -427,6 +427,12 @@ ul {
     /* 上下留白，左右居中 */
     object-fit: contain;
     /* 确保内容完整显示 */
+}
+
+.post-content,
+.article-entry,
+.post-content p,
+.article-entry p {
     white-space: normal !important;
     /* 恢复默认的换行规则 */
     word-wrap: break-word !important;
