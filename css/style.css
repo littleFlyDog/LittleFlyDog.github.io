@@ -427,4 +427,12 @@ ul {
     /* 上下留白，左右居中 */
     object-fit: contain;
     /* 确保内容完整显示 */
+    white-space: normal !important;
+    /* 恢复默认的换行规则 */
+    word-wrap: break-word !important;
+    /* 允许长单词换行 */
+    overflow-wrap: break-word !important;
+    /* 现代浏览器标准：内容溢出时换行 */
+    max-width: 100% !important;
+    /* 确保不超过父容器宽度 */
 }
