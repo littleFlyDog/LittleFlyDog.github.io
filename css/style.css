@@ -412,19 +412,19 @@ ul {
     border: 1px solid #333;
 }
 
-.post-content img {
-    max-width: 50%;
-    /* 限制最大宽度为父容器宽度的100% */
-    height: auto;
-    /* 高度自动，防止变形 */
-    display: block;
-    /* 让图片独占一行 */
-    margin: 30px auto;
-    /* 上下留白30px，左右自动居中 */
-    border-radius: 8px;
-    /* 图片圆角 */
-    border: 1px solid #333;
-    /* 给图片加一个深灰边框，更有质感 */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    /* 轻微阴影 */
+/* --- 暴力修复：强制图片适应屏幕宽度 --- */
+.post-content img,
+.article-entry img,
+.article-inner img,
+.content img {
+    max-width: 90% !important;
+    /* 宽度最大只能是容器的100%，不能溢出 */
+    height: auto !important;
+    /* 高度自动缩放，保证图片不变形 */
+    display: block !important;
+    /* 独占一行 */
+    margin: 20px auto !important;
+    /* 上下留白，左右居中 */
+    object-fit: contain;
+    /* 确保内容完整显示 */
 }
