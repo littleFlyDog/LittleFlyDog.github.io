@@ -423,7 +423,7 @@ ul {
     /* 高度自动缩放，保证图片不变形 */
     display: block !important;
     /* 独占一行 */
-    margin: 20px !important;
+    margin: 20px auto !important;
     /* 上下留白，左右居中 */
     object-fit: contain;
     /* 确保内容完整显示 */
@@ -439,7 +439,7 @@ ul {
     /* 允许长单词换行 */
     overflow-wrap: break-word !important;
     /* 现代浏览器标准：内容溢出时换行 */
-    max-width: 70% !important;
+    max-width: 100% !important;
     /* 确保不超过父容器宽度 */
 }
 
@@ -457,7 +457,7 @@ ul {
     /* 允许长单词换行 */
     overflow-wrap: break-word !important;
     /* 溢出时换行 */
-    max-width: 80% !important;
+    max-width: 100% !important;
     /* 限制最大宽度 */
     box-sizing: border-box !important;
     /* 边框算在宽度内 */
