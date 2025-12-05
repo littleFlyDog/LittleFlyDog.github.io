@@ -423,7 +423,7 @@ ul {
     /* 高度自动缩放，保证图片不变形 */
     display: block !important;
     /* 独占一行 */
-    margin: 20px auto !important;
+    margin: 20px !important;
     /* 上下留白，左右居中 */
     object-fit: contain;
     /* 确保内容完整显示 */
