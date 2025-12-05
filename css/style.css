@@ -417,7 +417,7 @@ ul {
 .article-entry img,
 .article-inner img,
 .content img {
-    max-width: 90% !important;
+    max-width: 30% !important;
     /* 宽度最大只能是容器的100%，不能溢出 */
     height: auto !important;
     /* 高度自动缩放，保证图片不变形 */
