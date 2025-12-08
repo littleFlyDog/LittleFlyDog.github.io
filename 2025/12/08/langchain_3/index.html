@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        siyuan&#39;s blog | SJTU
+    </title><meta name="robots" content="noindex">
+    <!-- 图标 -->
+    <link rel="icon" href="/img/favicon.png">
+    <!-- 字体 -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- 样式 -->
+    <link rel="stylesheet" href="/css/style.css">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+    <!-- 顶部进度条：颜色已改为 FFC800 (黄色) -->
+    <div id="progress-bar"
+        style="position: fixed; top: 0; left: 0; height: 3px; background: #FFC800; width: 0%; z-index: 9999; transition: width 0.1s;">
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="menu">
+                <a href="/">Home</a>
+                <a href="/archives">Archives</a>
+                <a href="/about">About Me</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="mailto:siyuanzhang@sjtu.edu.cn" class="nav-icon" title="Email Me">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+            </a>
+            <a href="https://github.com/littleFlyDog" target="_blank" class="nav-icon" title="Visit my GitHub">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="vscode-wrapper">
+    <!-- 标题栏 -->
+    <div class="window-header">
+        <div class="traffic-lights">
+            <div class="dot close"></div>
+            <div class="dot minimize"></div>
+            <div class="dot maximize"></div>
+        </div>
+        <!-- 标题栏文字居中 -->
+        <div style="margin: 0 auto; color: #999; font-size: 0.8rem; font-family: sans-serif;">
+            day3:大模型的工具调用 - Hello World!
+        </div>
+    </div>
+
+    <div class="vscode-body">
+        <!-- 侧边栏 -->
+        <div class="vscode-sidebar">
+            <div class="side-icon active"></div>
+            <div class="side-icon"></div>
+            <div class="side-icon"></div>
+        </div>
+
+        <!-- 内容区 -->
+        <div style="flex: 1; background: var(--vscode-bg);">
+            <!-- 标签页 -->
+            <div style="background: #1e1e1e; height: 35px; display: flex; border-bottom: 1px solid #252526;">
+                <div
+                    style="padding: 0 20px; display: flex; align-items: center; color: #fff; border-top: 1px solid var(--accent-color); background: #1e1e1e; font-size: 0.8rem; border-right: 1px solid #252526;">
+                    <span style="color: #f1e05a; margin-right: 8px; font-weight: bold;">JS</span>
+                    day3:大模型的工具调用.md
+                </div>
+            </div>
+
+            <!-- 面包屑 -->
+            <div style="padding: 10px 40px; color: #555; font-size: 0.8rem; font-family: monospace;">
+                src > posts > day3:大模型的工具调用
+            </div>
+
+            <!-- 正文 -->
+            <article class="post-content">
+                <h1>
+                    day3:大模型的工具调用
+                </h1>
+                <div style="color: #666; margin-bottom: 30px; font-family: monospace; font-size: 0.8rem;">
+                    // Author: SiyuanZhang<br>
+                    // Published: 2025-12-08
+                </div>
+
+                <h2 id="大模型的工具调用"><a href="#大模型的工具调用" class="headerlink" title="大模型的工具调用"></a><center>大模型的工具调用</center></h2><hr>
+<ol>
+<li>大模型工具机制</li>
+</ol>
+<ul>
+<li>Tools 工具理解</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> config.load_key <span class="keyword">import</span> load_key</span><br><span class="line"><span class="keyword">from</span> langchain_core.messages <span class="keyword">import</span> HumanMessage,SystemMessage</span><br><span class="line"><span class="keyword">from</span> langchain.chat_models <span class="keyword">import</span> init_chat_model</span><br><span class="line">os.environ[<span class="string">&quot;LANGSMITH_TRACING&quot;</span>] =<span class="string">&quot;true&quot;</span></span><br><span class="line">os.environ[<span class="string">&quot;LANGSMITH_PROJECT&quot;</span>] =<span class="string">&quot;firstLangChainDemo&quot;</span></span><br><span class="line">os.environ[<span class="string">&quot;LANGSMITH_API_KEY&quot;</span>] =load_key(<span class="string">&quot;LANGSMITH_API_KEY&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.environ.get(<span class="string">&quot;OPENAI_API_KEY&quot;</span>):</span><br><span class="line">    os.environ[<span class="string">&quot;OPENAI_API_KEY&quot;</span>] = load_key(<span class="string">&quot;OPENAI_API_KEY&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> langchain_core.prompts <span class="keyword">import</span> ChatPromptTemplate</span><br><span class="line"><span class="keyword">from</span> langchain_core.output_parsers <span class="keyword">import</span> StrOutputParser</span><br><span class="line"></span><br><span class="line">prompt_template1=ChatPromptTemplate.from_messages([</span><br><span class="line">    (<span class="string">&quot;system&quot;</span>,<span class="string">&quot;translate the following from English into &#123;language&#125;&quot;</span>),(<span class="string">&quot;human&quot;</span>,<span class="string">&quot;&#123;text&#125;&quot;</span>)</span><br><span class="line">    ])</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> langchain_openai <span class="keyword">import</span> ChatOpenAI</span><br><span class="line">llm=ChatOpenAI(</span><br><span class="line">    base_url=<span class="string">&quot;https://dashscope.aliyuncs.com/compatible-mode/v1&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;qwen-flash&quot;</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">parse=StrOutputParser()</span><br></pre></td></tr></table></figure>
+
+<pre><code>d:\pg\anaconda3\envs\langchainv1\Lib\site-packages\langchain_core\_api\deprecation.py:26: UserWarning: Core Pydantic V1 functionality isn&#39;t compatible with Python 3.14 or greater.
+  from pydantic.v1.fields import FieldInfo as FieldInfoV1
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#print(llm.invoke(&quot;今天是几月几号?&quot;).content)</span></span><br><span class="line"><span class="comment">#print(llm.invoke(&quot;今天是几月几号?&quot;).content)</span></span><br><span class="line"><span class="comment">#显然llm不能准确知道时间</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>今天是2024年6月18日。
+</code></pre>
+<ol>
+<li>定制本地Tools工具</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">from</span> langchain.tools <span class="keyword">import</span> tool</span><br><span class="line"><span class="meta">@tool</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_current_date</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;获取今天日期&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> datetime.datetime.today().strftime(<span class="string">&quot;%Y-%m-%d&quot;</span>)</span><br><span class="line"></span><br><span class="line">llm_with_tools = llm.bind_tools([get_current_date])</span><br><span class="line"></span><br><span class="line">all_tools = &#123;<span class="string">&quot;get_current_date&quot;</span>: get_current_date&#125;</span><br><span class="line"></span><br><span class="line">query = <span class="string">&quot;今天是⼏⽉⼏号&quot;</span></span><br><span class="line">messages = [query]</span><br><span class="line"></span><br><span class="line">ai_msg = llm_with_tools.invoke(messages) <span class="comment">#ai_msg返回的是AIMessage对象,里面有需要调用的工具信息</span></span><br><span class="line">messages.append(ai_msg)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(ai_msg.tool_calls)</span><br><span class="line"><span class="keyword">if</span> ai_msg.tool_calls:</span><br><span class="line">    <span class="keyword">for</span> tool_call <span class="keyword">in</span> ai_msg.tool_calls:</span><br><span class="line">        selected_tool = all_tools[tool_call[<span class="string">&quot;name&quot;</span>].lower()]</span><br><span class="line">        tool_msg = selected_tool.invoke(tool_call)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;工具调用结果:&quot;</span>, tool_msg)</span><br><span class="line">        messages.append(tool_msg)</span><br><span class="line">llm_with_tools.invoke(messages).content</span><br></pre></td></tr></table></figure>
+
+<pre><code>[{&#39;name&#39;: &#39;get_current_date&#39;, &#39;args&#39;: {}, &#39;id&#39;: &#39;call_b5a2a97f5c134ca1bfba08&#39;, &#39;type&#39;: &#39;tool_call&#39;}]
+工具调用结果: content=&#39;2025-12-08&#39; name=&#39;get_current_date&#39; tool_call_id=&#39;call_b5a2a97f5c134ca1bfba08&#39;
+
+
+
+
+
+&#39;今天是2025年12月8日。&#39;
+</code></pre>
+<ol start="2">
+<li>深入理解<code>@tool</code>装饰器</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">from</span> langchain.tools <span class="keyword">import</span> tool</span><br><span class="line"><span class="comment"># 定义⼯具 注意要添加注释</span></span><br><span class="line"><span class="meta">@tool(<span class="params">description=<span class="string">&quot;获取某个城市的天⽓&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_city_weather</span>(<span class="params">city:<span class="built_in">str</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;获取某个城市的天⽓</span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">    city: 具体城市</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;城市&quot;</span>+city+<span class="string">&quot;,今天天⽓不错&quot;</span></span><br><span class="line">    <span class="comment"># ⼤模型绑定⼯具</span></span><br><span class="line">llm_with_tools = llm.bind_tools([get_city_weather])</span><br><span class="line"><span class="comment"># ⼯具容器</span></span><br><span class="line">all_tools = &#123;<span class="string">&quot;get_city_weather&quot;</span>: get_city_weather&#125;</span><br><span class="line"><span class="comment"># 把所有消息存到⼀起</span></span><br><span class="line">query = <span class="string">&quot;北京今天的天⽓怎么样？&quot;</span></span><br><span class="line">messages = [query]</span><br><span class="line"><span class="comment"># 询问⼤模型。⼤模型会判断需要调⽤⼯具，并返回⼀个⼯具调⽤请求</span></span><br><span class="line">ai_msg = llm_with_tools.invoke(messages)</span><br><span class="line">messages.append(ai_msg)</span><br><span class="line"><span class="comment"># 打印需要调⽤的⼯具</span></span><br><span class="line"><span class="built_in">print</span>(ai_msg.tool_calls)</span><br><span class="line"><span class="keyword">if</span> ai_msg.tool_calls:</span><br><span class="line">    <span class="keyword">for</span> tool_call <span class="keyword">in</span> ai_msg.tool_calls:</span><br><span class="line">        selected_tool = all_tools[tool_call[<span class="string">&quot;name&quot;</span>].lower()]</span><br><span class="line">        tool_msg = selected_tool.invoke(tool_call)</span><br><span class="line">        messages.append(tool_msg)</span><br><span class="line">llm_with_tools.invoke(messages).content</span><br></pre></td></tr></table></figure>
+
+<pre><code>[{&#39;name&#39;: &#39;get_city_weather&#39;, &#39;args&#39;: {&#39;city&#39;: &#39;北京&#39;}, &#39;id&#39;: &#39;call_d305f1b8309b4aa79dcb56&#39;, &#39;type&#39;: &#39;tool_call&#39;}]
+
+
+
+
+
+&#39;北京今天的天气不错！&#39;
+</code></pre>
+<ol start="4">
+<li>深度定制工具</li>
+</ol>
+<ul>
+<li><code>StructuredTool.from_function</code>就不用在函数内部写注释,也不需要精心设计函数名,但函数内部参数名的选取仍需谨慎</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_core.tools <span class="keyword">import</span> StructuredTool</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">bad_weather_tool</span>(<span class="params">city:<span class="built_in">str</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;获取某个城市的天⽓</span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">    city: 具体城市</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;城市&quot;</span>+city+<span class="string">&quot;,今天天⽓不太好&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#与之前方法的区别在这里</span></span><br><span class="line"><span class="comment"># 定义⼯具。这个⽅法中有更多参数可以定制</span></span><br><span class="line">weatherTool = StructuredTool.from_function(func=bad_weather_tool,description=<span class="string">&quot;获取某个城市的天⽓&quot;</span>,name=<span class="string">&quot;bad_weather_tool&quot;</span>)</span><br><span class="line"></span><br><span class="line">all_tools = &#123;<span class="string">&quot;bad_weather_tool&quot;</span>: weatherTool&#125;</span><br><span class="line">llm_with_tools = llm.bind_tools([weatherTool])</span><br><span class="line"><span class="comment"># 把所有消息存到⼀起</span></span><br><span class="line">query = <span class="string">&quot;北京今天的天⽓怎么样？&quot;</span></span><br><span class="line">messages = [query]</span><br><span class="line"><span class="comment"># 第⼀次访问⼤模型返回的结果</span></span><br><span class="line">ai_msg = llm_with_tools.invoke(messages)</span><br><span class="line">messages.append(ai_msg)</span><br><span class="line"><span class="built_in">print</span>(ai_msg.tool_calls)</span><br><span class="line"><span class="comment"># 调⽤本地⼯具</span></span><br><span class="line"><span class="keyword">if</span> ai_msg.tool_calls:</span><br><span class="line">    <span class="keyword">for</span> tool_call <span class="keyword">in</span> ai_msg.tool_calls:</span><br><span class="line">        selected_tool = all_tools[tool_call[<span class="string">&quot;name&quot;</span>].lower()]</span><br><span class="line">        tool_msg = selected_tool.invoke(tool_call)</span><br><span class="line">        messages.append(tool_msg)</span><br><span class="line">        <span class="comment"># 第⼆次返回的结果</span></span><br><span class="line">llm_with_tools.invoke(messages).content</span><br></pre></td></tr></table></figure>
+
+<pre><code>[{&#39;name&#39;: &#39;bad_weather_tool&#39;, &#39;args&#39;: {&#39;city&#39;: &#39;北京&#39;}, &#39;id&#39;: &#39;call_2874a8457e854cd3a85b07&#39;, &#39;type&#39;: &#39;tool_call&#39;}]
+
+
+
+
+
+&#39;北京今天的天气不太好，建议您出门时携带雨具，并注意保暖。&#39;
+</code></pre>
+<ol start="5">
+<li>调用和风天气api和qwen实现对于工具的使用</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> arrow <span class="keyword">import</span> get</span><br><span class="line"><span class="keyword">from</span> langchain.tools <span class="keyword">import</span> tool</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">os.environ[<span class="string">&quot;WEATHER_API_KEY&quot;</span>] = load_key(<span class="string">&quot;WEATHER_API_KEY&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@tool</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_weather</span>(<span class="params">city:<span class="built_in">str</span></span>):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;获取某个城市的天气或当前时间</span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">    city: 具体城市</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    url1=<span class="string">&quot;https://mg5ctv66gc.re.qweatherapi.com/geo/v2/city/lookup&quot;</span></span><br><span class="line">    url2=<span class="string">&quot;https://mg5ctv66gc.re.qweatherapi.com/v7/weather/now&quot;</span></span><br><span class="line">    params1=&#123;</span><br><span class="line">        <span class="string">&quot;key&quot;</span>:os.environ[<span class="string">&quot;WEATHER_API_KEY&quot;</span>],</span><br><span class="line">        <span class="string">&quot;location&quot;</span>:city&#125;</span><br><span class="line">    city_loacationid=requests.get(url1,params=params1).json()[<span class="string">&quot;location&quot;</span>][<span class="number">0</span>][<span class="string">&quot;id&quot;</span>]</span><br><span class="line">    <span class="comment"># print(city_loacationid.json())</span></span><br><span class="line">    params2=&#123;</span><br><span class="line">        <span class="string">&quot;key&quot;</span>:os.environ[<span class="string">&quot;WEATHER_API_KEY&quot;</span>],</span><br><span class="line">        <span class="string">&quot;location&quot;</span>:city_loacationid,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    weather_info=requests.get(url2,params=params2).json()</span><br><span class="line">    <span class="comment"># print(f&#x27;城市:&#123;city&#125;&#x27;)</span></span><br><span class="line">    <span class="comment"># print(f&#x27;时间:&#123;weather_info[&quot;updateTime&quot;]&#125;&#x27;)</span></span><br><span class="line">    <span class="comment"># print(f&#x27;气温:&#123;weather_info[&quot;now&quot;][&quot;temp&quot;]&#125;度,天气:&#123;weather_info[&quot;now&quot;][&quot;text&quot;]&#125;&#x27;)</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&#x27;城市:<span class="subst">&#123;city&#125;</span>\n时间:<span class="subst">&#123;get(weather_info[<span class="string">&quot;updateTime&quot;</span>])&#125;</span>\n气温:<span class="subst">&#123;weather_info[<span class="string">&quot;now&quot;</span>][<span class="string">&quot;temp&quot;</span>]&#125;</span>度,天气:<span class="subst">&#123;weather_info[<span class="string">&quot;now&quot;</span>][<span class="string">&quot;text&quot;</span>]&#125;</span>&#x27;</span></span><br><span class="line"></span><br><span class="line">all_tools = &#123;<span class="string">&quot;get_weather&quot;</span>: get_weather&#125;</span><br><span class="line"></span><br><span class="line">llm_with_tools = llm.bind_tools([get_weather])</span><br><span class="line">query=<span class="string">&quot;上海今天的天气怎么样？现在的时间是什么时候?&quot;</span></span><br><span class="line">message_1=[query]</span><br><span class="line">ai_msg=llm_with_tools.invoke(message_1)</span><br><span class="line"></span><br><span class="line">message_1.append(ai_msg)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ai_msg.tool_calls:</span><br><span class="line">    <span class="keyword">for</span> tool_call <span class="keyword">in</span> ai_msg.tool_calls:</span><br><span class="line">        selected_tool = all_tools[tool_call[<span class="string">&quot;name&quot;</span>].lower()]</span><br><span class="line">        tool_msg = selected_tool.invoke(tool_call)</span><br><span class="line">        message_1.append(tool_msg)</span><br><span class="line">        <span class="comment"># 第⼆次返回的结果</span></span><br><span class="line">llm_with_tools.invoke(message_1).content</span><br></pre></td></tr></table></figure>
+
+<pre><code>城市:上海
+时间:2025-12-08T15:36+08:00
+气温:14度,天气:晴
+
+
+
+
+
+&#39;上海今天的天气是晴天，气温为14度。当前时间是2025年12月8日15时36分。&#39;
+</code></pre>
+<ol start="6">
+<li>将chain转化为工具</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_core.output_parsers <span class="keyword">import</span> StrOutputParser</span><br><span class="line"><span class="keyword">from</span> langchain_core.prompts.chat <span class="keyword">import</span> ChatPromptTemplate</span><br><span class="line"><span class="comment"># LCEL定制⼀个chain</span></span><br><span class="line">prompt = ChatPromptTemplate.from_messages([(<span class="string">&quot;human&quot;</span>, <span class="string">&quot;你好，请⽤下⾯这种语⾔回答我的问题&#123;language&#125;.&quot;</span>)])</span><br><span class="line">parser = StrOutputParser()</span><br><span class="line">chain = prompt | llm | parser</span><br><span class="line"><span class="comment"># 将chain转换成⼯具</span></span><br><span class="line">as_tool = chain.as_tool(name=<span class="string">&quot;translatetool&quot;</span>, description=<span class="string">&quot;翻译任务&quot;</span>)</span><br><span class="line">all_tools = &#123;<span class="string">&quot;translatetool&quot;</span>: as_tool&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;as_tool.args:&quot;</span>,as_tool.args)</span><br><span class="line"><span class="comment"># 绑定⼯具</span></span><br><span class="line">llm_with_tools = llm.bind_tools([as_tool])</span><br><span class="line">query = <span class="string">&quot;今天天⽓真冷，这句话⽤英语怎么回答？&quot;</span></span><br><span class="line">message_2 = [query]</span><br><span class="line">ai_msg = llm_with_tools.invoke(message_2)</span><br><span class="line">message_2.append(ai_msg)</span><br><span class="line"><span class="built_in">print</span>(ai_msg.tool_calls)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ai_msg.tool_calls:</span><br><span class="line">    <span class="keyword">for</span> tool_call <span class="keyword">in</span> ai_msg.tool_calls:</span><br><span class="line">        selected_tool = all_tools[tool_call[<span class="string">&quot;name&quot;</span>].lower()]</span><br><span class="line">        tool_msg = selected_tool.invoke(tool_call)</span><br><span class="line">        message_2.append(tool_msg)</span><br><span class="line">llm_with_tools.invoke(message_2).content</span><br></pre></td></tr></table></figure>
+
+<pre><code>as_tool.args: {&#39;language&#39;: {&#39;title&#39;: &#39;Language&#39;, &#39;type&#39;: &#39;string&#39;}}
+[{&#39;name&#39;: &#39;translatetool&#39;, &#39;args&#39;: {&#39;language&#39;: &#39;en&#39;}, &#39;id&#39;: &#39;call_fdfd6bd442c44ae3a545f2&#39;, &#39;type&#39;: &#39;tool_call&#39;}]
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+
+
+
+
+
+&#39;The weather is really cold today.&#39;
+</code></pre>
+<ol start="7">
+<li>使用agent来调用工具</li>
+</ol>
+<ul>
+<li>使用agent可以简化代码,不用再书写繁琐代码,会在内部自动判断是否调用工具,以及工具结果继续拼装为问题,知道得到最终答案并输出</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> langchain.tools <span class="keyword">import</span> tool</span><br><span class="line"><span class="keyword">from</span> langchain.agents <span class="keyword">import</span>  create_agent</span><br><span class="line"><span class="comment"># 定义⼯具 注意要添加注释</span></span><br><span class="line"><span class="meta">@tool</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_weather</span>(<span class="params">city:<span class="built_in">str</span></span>):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;获取某个城市的天气或当前时间</span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">    city: 具体城市</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    url1=<span class="string">&quot;https://mg5ctv66gc.re.qweatherapi.com/geo/v2/city/lookup&quot;</span></span><br><span class="line">    url2=<span class="string">&quot;https://mg5ctv66gc.re.qweatherapi.com/v7/weather/now&quot;</span></span><br><span class="line">    params1=&#123;</span><br><span class="line">        <span class="string">&quot;key&quot;</span>:os.environ[<span class="string">&quot;WEATHER_API_KEY&quot;</span>],</span><br><span class="line">        <span class="string">&quot;location&quot;</span>:city&#125;</span><br><span class="line">    city_loacationid=requests.get(url1,params=params1).json()[<span class="string">&quot;location&quot;</span>][<span class="number">0</span>][<span class="string">&quot;id&quot;</span>]</span><br><span class="line">    <span class="comment"># print(city_loacationid.json())</span></span><br><span class="line">    params2=&#123;</span><br><span class="line">        <span class="string">&quot;key&quot;</span>:os.environ[<span class="string">&quot;WEATHER_API_KEY&quot;</span>],</span><br><span class="line">        <span class="string">&quot;location&quot;</span>:city_loacationid,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    weather_info=requests.get(url2,params=params2).json()</span><br><span class="line">    <span class="comment"># print(f&#x27;城市:&#123;city&#125;&#x27;)</span></span><br><span class="line">    <span class="comment"># print(f&#x27;时间:&#123;weather_info[&quot;updateTime&quot;]&#125;&#x27;)</span></span><br><span class="line">    <span class="comment"># print(f&#x27;气温:&#123;weather_info[&quot;now&quot;][&quot;temp&quot;]&#125;度,天气:&#123;weather_info[&quot;now&quot;][&quot;text&quot;]&#125;&#x27;)</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&#x27;城市:<span class="subst">&#123;city&#125;</span>\n时间:<span class="subst">&#123;get(weather_info[<span class="string">&quot;updateTime&quot;</span>])&#125;</span>\n气温:<span class="subst">&#123;weather_info[<span class="string">&quot;now&quot;</span>][<span class="string">&quot;temp&quot;</span>]&#125;</span>度,天气:<span class="subst">&#123;weather_info[<span class="string">&quot;now&quot;</span>][<span class="string">&quot;text&quot;</span>]&#125;</span>&#x27;</span></span><br><span class="line"><span class="comment"># 初始化代理</span></span><br><span class="line">agent = create_agent(</span><br><span class="line">tools=[get_weather], <span class="comment"># 使⽤装饰器定义的⼯具</span></span><br><span class="line">model=llm,</span><br><span class="line">system_prompt=<span class="string">&quot;你是一个智能助理Leo,可以帮助用户查询天气和时间信息。&quot;</span></span><br><span class="line">)</span><br><span class="line">query = <span class="string">&quot;北京今天天气怎么样,现在时间是多少?&quot;</span></span><br><span class="line"></span><br><span class="line">response = agent.invoke(&#123;<span class="string">&quot;messages&quot;</span>: [HumanMessage(content=query)]&#125;)</span><br><span class="line"><span class="built_in">print</span>(response[<span class="string">&quot;messages&quot;</span>][-<span class="number">1</span>].content)</span><br></pre></td></tr></table></figure>
+
+<pre><code>城市:北京
+时间:2025-12-08T16:36+08:00
+气温:4度,天气:晴
+北京今天天气晴，气温为4度。当前时间为2025年12月8日16时36分。
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<!-- flag of hidden posts -->
+            </article>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <footer
+        style="text-align: center; padding: 50px; color: #444; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace;">
+        <p>SiyuanZhang @ SJTU | SYSTEM ONLINE</p>
+    </footer>
+
+    <!-- 脚本部分 -->
+    <script>
+        window.onscroll = function () {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+    <script>
+        if (window.innerWidth > 768) {
+            VANTA.NET({
+                el: "body",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0xFFC800,       // 已改为黄色
+                backgroundColor: 0x050505,
+                points: 8.00,
+                maxDistance: 22.00,
+                spacing: 40.00
+            })
+        }
+    </script>
+</body>
+
+</html>

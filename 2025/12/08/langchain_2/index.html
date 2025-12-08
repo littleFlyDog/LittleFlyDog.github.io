@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        siyuan&#39;s blog | SJTU
+    </title><meta name="robots" content="noindex">
+    <!-- 图标 -->
+    <link rel="icon" href="/img/favicon.png">
+    <!-- 字体 -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- 样式 -->
+    <link rel="stylesheet" href="/css/style.css">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+    <!-- 顶部进度条：颜色已改为 FFC800 (黄色) -->
+    <div id="progress-bar"
+        style="position: fixed; top: 0; left: 0; height: 3px; background: #FFC800; width: 0%; z-index: 9999; transition: width 0.1s;">
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="menu">
+                <a href="/">Home</a>
+                <a href="/archives">Archives</a>
+                <a href="/about">About Me</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="mailto:siyuanzhang@sjtu.edu.cn" class="nav-icon" title="Email Me">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+            </a>
+            <a href="https://github.com/littleFlyDog" target="_blank" class="nav-icon" title="Visit my GitHub">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="vscode-wrapper">
+    <!-- 标题栏 -->
+    <div class="window-header">
+        <div class="traffic-lights">
+            <div class="dot close"></div>
+            <div class="dot minimize"></div>
+            <div class="dot maximize"></div>
+        </div>
+        <!-- 标题栏文字居中 -->
+        <div style="margin: 0 auto; color: #999; font-size: 0.8rem; font-family: sans-serif;">
+            day3:LCEL链 - Hello World!
+        </div>
+    </div>
+
+    <div class="vscode-body">
+        <!-- 侧边栏 -->
+        <div class="vscode-sidebar">
+            <div class="side-icon active"></div>
+            <div class="side-icon"></div>
+            <div class="side-icon"></div>
+        </div>
+
+        <!-- 内容区 -->
+        <div style="flex: 1; background: var(--vscode-bg);">
+            <!-- 标签页 -->
+            <div style="background: #1e1e1e; height: 35px; display: flex; border-bottom: 1px solid #252526;">
+                <div
+                    style="padding: 0 20px; display: flex; align-items: center; color: #fff; border-top: 1px solid var(--accent-color); background: #1e1e1e; font-size: 0.8rem; border-right: 1px solid #252526;">
+                    <span style="color: #f1e05a; margin-right: 8px; font-weight: bold;">JS</span>
+                    day3:LCEL链.md
+                </div>
+            </div>
+
+            <!-- 面包屑 -->
+            <div style="padding: 10px 40px; color: #555; font-size: 0.8rem; font-family: monospace;">
+                src > posts > day3:lcel链
+            </div>
+
+            <!-- 正文 -->
+            <article class="post-content">
+                <h1>
+                    day3:LCEL链
+                </h1>
+                <div style="color: #666; margin-bottom: 30px; font-family: monospace; font-size: 0.8rem;">
+                    // Author: SiyuanZhang<br>
+                    // Published: 2025-12-08
+                </div>
+
+                <h2 id="LCEL链"><a href="#LCEL链" class="headerlink" title="LCEL链"></a><center>LCEL链</center></h2><hr>
+<ol>
+<li>LCEL链式语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> config.load_key <span class="keyword">import</span> load_key</span><br><span class="line"><span class="keyword">from</span> langchain_core.messages <span class="keyword">import</span> HumanMessage,SystemMessage</span><br><span class="line"><span class="keyword">from</span> langchain.chat_models <span class="keyword">import</span> init_chat_model</span><br><span class="line">os.environ[<span class="string">&quot;LANGSMITH_TRACING&quot;</span>] =<span class="string">&quot;true&quot;</span></span><br><span class="line">os.environ[<span class="string">&quot;LANGSMITH_PROJECT&quot;</span>] =<span class="string">&quot;firstLangChainDemo&quot;</span></span><br><span class="line">os.environ[<span class="string">&quot;LANGSMITH_API_KEY&quot;</span>] =load_key(<span class="string">&quot;LANGSMITH_API_KEY&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.environ.get(<span class="string">&quot;OPENAI_API_KEY&quot;</span>):</span><br><span class="line">    os.environ[<span class="string">&quot;OPENAI_API_KEY&quot;</span>] = load_key(<span class="string">&quot;OPENAI_API_KEY&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> langchain_core.prompts <span class="keyword">import</span> ChatPromptTemplate</span><br><span class="line"><span class="keyword">from</span> langchain_core.output_parsers <span class="keyword">import</span> StrOutputParser</span><br><span class="line"></span><br><span class="line">prompt_template1=ChatPromptTemplate.from_messages([</span><br><span class="line">    (<span class="string">&quot;system&quot;</span>,<span class="string">&quot;translate the following from English into &#123;language&#125;&quot;</span>),(<span class="string">&quot;human&quot;</span>,<span class="string">&quot;&#123;text&#125;&quot;</span>)</span><br><span class="line">    ])</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> langchain_openai <span class="keyword">import</span> ChatOpenAI</span><br><span class="line">llm=ChatOpenAI(</span><br><span class="line">    base_url=<span class="string">&quot;https://dashscope.aliyuncs.com/compatible-mode/v1&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;qwen-flash&quot;</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">parse=StrOutputParser()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>一个简单的链</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">chain1 = prompt_template1 | llm | parse</span><br><span class="line"></span><br><span class="line">output=chain1.invoke(&#123;<span class="string">&quot;language&quot;</span>:<span class="string">&quot;Chinese&quot;</span>,<span class="string">&quot;text&quot;</span>:<span class="string">&quot;Hello,how are you?&quot;</span>&#125;)</span><br><span class="line"><span class="built_in">print</span>(output)</span><br></pre></td></tr></table></figure>
+
+<pre><code>你好，你怎么样？
+</code></pre>
+<ol start="2">
+<li>基于chain1构建更复杂的练</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">prompt_template2=ChatPromptTemplate.from_template(<span class="string">&quot;我该如何回答&#123;talk&#125;,给我五个字以内的回答&quot;</span>)</span><br><span class="line">chain2= &#123;<span class="string">&quot;talk&quot;</span>:chain1&#125; | prompt_template2 | llm | parse</span><br><span class="line"></span><br><span class="line">output=chain2.invoke(&#123;<span class="string">&quot;text&quot;</span>:<span class="string">&quot;Hello,how are you?&quot;</span>,<span class="string">&quot;language&quot;</span>:<span class="string">&quot;Chinese&quot;</span>&#125;)</span><br><span class="line"><span class="built_in">print</span>(output)</span><br></pre></td></tr></table></figure>
+
+<pre><code>我很好，谢谢！
+</code></pre>
+<ol start="3">
+<li>并行链</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> langchain_core.prompts <span class="keyword">import</span> ChatPromptTemplate</span><br><span class="line"><span class="keyword">from</span> langchain_core.runnables <span class="keyword">import</span> RunnableParallel, RunnableLambda,RunnableWithMessageHistory</span><br><span class="line"></span><br><span class="line">prompt_template_zh = ChatPromptTemplate.from_messages([</span><br><span class="line">(<span class="string">&quot;system&quot;</span>, <span class="string">&quot;Translate the following from English into Chinese&quot;</span>),</span><br><span class="line">(<span class="string">&quot;user&quot;</span>, <span class="string">&quot;&#123;text1&#125;&quot;</span>)</span><br><span class="line">])</span><br><span class="line">prompt_template_fr = ChatPromptTemplate.from_messages([</span><br><span class="line">(<span class="string">&quot;system&quot;</span>, <span class="string">&quot;Translate the following from English into French&quot;</span>),</span><br><span class="line">(<span class="string">&quot;user&quot;</span>, <span class="string">&quot;&#123;text2&#125;&quot;</span>)</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">parser = StrOutputParser()</span><br><span class="line"></span><br><span class="line">chain_zh = prompt_template_zh | llm | parser</span><br><span class="line">chain_fr = prompt_template_fr | llm | parser</span><br><span class="line"></span><br><span class="line"><span class="comment">#仔细理解此处!,该链的输出会是一个字典，包含两个键值对，分别是&quot;zh_translation&quot;和&quot;fr_translation&quot;</span></span><br><span class="line">parallel_chains = RunnableParallel(&#123;</span><br><span class="line"><span class="string">&quot;zh_translation&quot;</span>: chain_zh,</span><br><span class="line"><span class="string">&quot;fr_translation&quot;</span>: chain_fr</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">final_chain = parallel_chains | RunnableLambda(<span class="keyword">lambda</span> x: <span class="string">f&quot;Chinese:<span class="subst">&#123;x[<span class="string">&#x27;zh_translation&#x27;</span>]&#125;</span> \n French: <span class="subst">&#123;x[<span class="string">&#x27;fr_translation&#x27;</span>]&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(final_chain.invoke(&#123;<span class="string">&quot;text1&quot;</span>:<span class="string">&quot;nice to meet you&quot;</span>,<span class="string">&quot;text2&quot;</span>:<span class="string">&quot;how are you?&quot;</span>&#125;))</span><br></pre></td></tr></table></figure>
+
+<pre><code>Chinese:很高兴认识你 
+ French: Comment ça va ?
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">final_chain.get_graph().print_ascii()</span><br></pre></td></tr></table></figure>
+
+<pre><code>   +----------------------------------------------+    
+   | Parallel&lt;zh_translation,fr_translation&gt;Input |    
+   +----------------------------------------------+    
+                  ***             ***                  
+                **                   **                
+              **                       **              
++--------------------+          +--------------------+ 
+| ChatPromptTemplate |          | ChatPromptTemplate | 
++--------------------+          +--------------------+ 
+           *                               *           
+           *                               *           
+           *                               *           
+    +------------+                  +------------+     
+    | ChatOpenAI |                  | ChatOpenAI |     
+    +------------+                  +------------+     
+           *                               *           
+           *                               *           
+           *                               *           
+  +-----------------+             +-----------------+  
+  | StrOutputParser |             | StrOutputParser |  
+  +-----------------+             +-----------------+  
+                  ***             ***                  
+                     **         **                     
+                       **     **                       
+  +-----------------------------------------------+    
+  | Parallel&lt;zh_translation,fr_translation&gt;Output |    
+  +-----------------------------------------------+    
+                           *                           
+                           *                           
+                           *                           
+                      +--------+                       
+                      | Lambda |                       
+                      +--------+                       
+                           *                           
+                           *                           
+                           *                           
+                   +--------------+                    
+                   | LambdaOutput |                    
+                   +--------------+                    
+</code></pre>
+<ul>
+<li>历史记录<br><strong>add_message</strong>里跟的是一个消息对象 (Object)<br><code>add_user_message``add_ai_message</code>后即可跟一个字符串</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_core.chat_history <span class="keyword">import</span> InMemoryChatMessageHistory</span><br><span class="line"></span><br><span class="line">history = InMemoryChatMessageHistory()</span><br><span class="line"></span><br><span class="line">history.add_user_message(<span class="string">&quot;你是谁？&quot;</span>)</span><br><span class="line">aimessage = llm.invoke(history.messages)</span><br><span class="line"><span class="built_in">print</span>(aimessage.content)</span><br><span class="line">history.add_message(aimessage)</span><br><span class="line"></span><br><span class="line">history.add_message(<span class="string">&quot;请重复⼀次&quot;</span>)</span><br><span class="line">aimessage2 = llm.invoke(history.messages)</span><br><span class="line"><span class="built_in">print</span>(aimessage2.content)</span><br><span class="line">history.add_message(aimessage2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>你好！我是通义千问（Qwen），是阿里巴巴集团旗下的通义实验室自主研发的超大规模语言模型。我可以帮助你回答问题、创作文字、编写代码、进行逻辑推理等。有什么我可以帮你的吗？
+你好！我是通义千问（Qwen），是阿里巴巴集团旗下的通义实验室自主研发的超大规模语言模型。我可以帮助你回答问题、创作文字、编写代码、进行逻辑推理等。有什么我可以帮你的吗？
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Chat History:&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> message <span class="keyword">in</span> history.messages:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;<span class="built_in">type</span>(message).__name__&#125;</span>: <span class="subst">&#123;message.content&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<!-- flag of hidden posts -->
+            </article>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <footer
+        style="text-align: center; padding: 50px; color: #444; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace;">
+        <p>SiyuanZhang @ SJTU | SYSTEM ONLINE</p>
+    </footer>
+
+    <!-- 脚本部分 -->
+    <script>
+        window.onscroll = function () {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+    <script>
+        if (window.innerWidth > 768) {
+            VANTA.NET({
+                el: "body",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0xFFC800,       // 已改为黄色
+                backgroundColor: 0x050505,
+                points: 8.00,
+                maxDistance: 22.00,
+                spacing: 40.00
+            })
+        }
+    </script>
+</body>
+
+</html>

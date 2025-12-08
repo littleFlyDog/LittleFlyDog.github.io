@@ -58,7 +58,7 @@
         </div>
         <!-- 标题栏文字居中 -->
         <div style="margin: 0 auto; color: #999; font-size: 0.8rem; font-family: sans-serif;">
-            langchain_1 - Hello World!
+            day1:llm的简单调用 - Hello World!
         </div>
     </div>
 
@@ -77,26 +77,27 @@
                 <div
                     style="padding: 0 20px; display: flex; align-items: center; color: #fff; border-top: 1px solid var(--accent-color); background: #1e1e1e; font-size: 0.8rem; border-right: 1px solid #252526;">
                     <span style="color: #f1e05a; margin-right: 8px; font-weight: bold;">JS</span>
-                    langchain_1.md
+                    day1:llm的简单调用.md
                 </div>
             </div>
 
             <!-- 面包屑 -->
             <div style="padding: 10px 40px; color: #555; font-size: 0.8rem; font-family: monospace;">
-                src > posts > langchain_1
+                src > posts > day1:llm的简单调用
             </div>
 
             <!-- 正文 -->
             <article class="post-content">
                 <h1>
-                    langchain_1
+                    day1:llm的简单调用
                 </h1>
                 <div style="color: #666; margin-bottom: 30px; font-family: monospace; font-size: 0.8rem;">
                     // Author: SiyuanZhang<br>
                     // Published: 2025-12-08
                 </div>
 
-                <ol>
+                <h2 id="LLM的简单调用"><a href="#LLM的简单调用" class="headerlink" title="LLM的简单调用"></a><center>LLM的简单调用</center></h2><hr>
+<ol>
 <li>利用key.json管理api_key</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> config.load_key <span class="keyword">import</span> load_key</span><br><span class="line"><span class="keyword">from</span> langchain_core.messages <span class="keyword">import</span> HumanMessage,SystemMessage</span><br><span class="line"><span class="keyword">from</span> langchain.chat_models <span class="keyword">import</span> init_chat_model</span><br><span class="line">os.environ[<span class="string">&quot;LANGSMITH_TRACING&quot;</span>] =<span class="string">&quot;true&quot;</span></span><br><span class="line">os.environ[<span class="string">&quot;LANGSMITH_PROJECT&quot;</span>] =<span class="string">&quot;firstLangChainDemo&quot;</span></span><br><span class="line">os.environ[<span class="string">&quot;LANGSMITH_API_KEY&quot;</span>] =load_key(<span class="string">&quot;LANGSMITH_API_KEY&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.environ.get(<span class="string">&quot;OPENAI_API_KEY&quot;</span>):</span><br><span class="line">    os.environ[<span class="string">&quot;OPENAI_API_KEY&quot;</span>] = load_key(<span class="string">&quot;OPENAI_API_KEY&quot;</span>)</span><br></pre></td></tr></table></figure>
