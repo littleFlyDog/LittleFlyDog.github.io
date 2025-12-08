@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        siyuan&#39;s blog | SJTU
+    </title><meta name="robots" content="noindex">
+    <!-- 图标 -->
+    <link rel="icon" href="/img/favicon.png">
+    <!-- 字体 -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- 样式 -->
+    <link rel="stylesheet" href="/css/style.css">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+    <!-- 顶部进度条：颜色已改为 FFC800 (黄色) -->
+    <div id="progress-bar"
+        style="position: fixed; top: 0; left: 0; height: 3px; background: #FFC800; width: 0%; z-index: 9999; transition: width 0.1s;">
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="menu">
+                <a href="/">Home</a>
+                <a href="/archives">Archives</a>
+                <a href="/about">About Me</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="mailto:siyuanzhang@sjtu.edu.cn" class="nav-icon" title="Email Me">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+            </a>
+            <a href="https://github.com/littleFlyDog" target="_blank" class="nav-icon" title="Visit my GitHub">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="vscode-wrapper">
+    <!-- 标题栏 -->
+    <div class="window-header">
+        <div class="traffic-lights">
+            <div class="dot close"></div>
+            <div class="dot minimize"></div>
+            <div class="dot maximize"></div>
+        </div>
+        <!-- 标题栏文字居中 -->
+        <div style="margin: 0 auto; color: #999; font-size: 0.8rem; font-family: sans-serif;">
+            langchain_1 - Hello World!
+        </div>
+    </div>
+
+    <div class="vscode-body">
+        <!-- 侧边栏 -->
+        <div class="vscode-sidebar">
+            <div class="side-icon active"></div>
+            <div class="side-icon"></div>
+            <div class="side-icon"></div>
+        </div>
+
+        <!-- 内容区 -->
+        <div style="flex: 1; background: var(--vscode-bg);">
+            <!-- 标签页 -->
+            <div style="background: #1e1e1e; height: 35px; display: flex; border-bottom: 1px solid #252526;">
+                <div
+                    style="padding: 0 20px; display: flex; align-items: center; color: #fff; border-top: 1px solid var(--accent-color); background: #1e1e1e; font-size: 0.8rem; border-right: 1px solid #252526;">
+                    <span style="color: #f1e05a; margin-right: 8px; font-weight: bold;">JS</span>
+                    langchain_1.md
+                </div>
+            </div>
+
+            <!-- 面包屑 -->
+            <div style="padding: 10px 40px; color: #555; font-size: 0.8rem; font-family: monospace;">
+                src > posts > langchain_1
+            </div>
+
+            <!-- 正文 -->
+            <article class="post-content">
+                <h1>
+                    langchain_1
+                </h1>
+                <div style="color: #666; margin-bottom: 30px; font-family: monospace; font-size: 0.8rem;">
+                    // Author: SiyuanZhang<br>
+                    // Published: 2025-12-08
+                </div>
+
+                <ol>
+<li>利用key.json管理api_key</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> config.load_key <span class="keyword">import</span> load_key</span><br><span class="line"><span class="keyword">from</span> langchain_core.messages <span class="keyword">import</span> HumanMessage,SystemMessage</span><br><span class="line"><span class="keyword">from</span> langchain.chat_models <span class="keyword">import</span> init_chat_model</span><br><span class="line">os.environ[<span class="string">&quot;LANGSMITH_TRACING&quot;</span>] =<span class="string">&quot;true&quot;</span></span><br><span class="line">os.environ[<span class="string">&quot;LANGSMITH_PROJECT&quot;</span>] =<span class="string">&quot;firstLangChainDemo&quot;</span></span><br><span class="line">os.environ[<span class="string">&quot;LANGSMITH_API_KEY&quot;</span>] =load_key(<span class="string">&quot;LANGSMITH_API_KEY&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.environ.get(<span class="string">&quot;OPENAI_API_KEY&quot;</span>):</span><br><span class="line">    os.environ[<span class="string">&quot;OPENAI_API_KEY&quot;</span>] = load_key(<span class="string">&quot;OPENAI_API_KEY&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>d:\pg\anaconda3\envs\langchainv1\Lib\site-packages\langchain_core\_api\deprecation.py:26: UserWarning: Core Pydantic V1 functionality isn&#39;t compatible with Python 3.14 or greater.
+  from pydantic.v1.fields import FieldInfo as FieldInfoV1
+</code></pre>
+<ol start="2">
+<li>使用 <code>init_chat_model</code>来第一次调用llm</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model=init_chat_model(model=<span class="string">&quot;qwen-flash&quot;</span>,model_provider=<span class="string">&quot;openai&quot;</span>,base_url=<span class="string">&quot;https://dashscope.aliyuncs.com/compatible-mode/v1&quot;</span>)</span><br><span class="line"></span><br><span class="line">messages= [SystemMessage(<span class="string">&quot;Translate the following from English into Chinese&quot;</span>),HumanMessage(<span class="string">&quot;Hello, how are you?&quot;</span>)]</span><br></pre></td></tr></table></figure>
+
+<pre><code>d:\pg\anaconda3\envs\langchainv1\Lib\site-packages\langchain_core\_api\deprecation.py:26: UserWarning: Core Pydantic V1 functionality isn&#39;t compatible with Python 3.14 or greater.
+  from pydantic.v1.fields import FieldInfo as FieldInfoV1
+
+
+content=&#39;你好，你好吗？&#39; additional_kwargs={&#39;refusal&#39;: None} response_metadata={&#39;token_usage&#39;: {&#39;completion_tokens&#39;: 5, &#39;prompt_tokens&#39;: 26, &#39;total_tokens&#39;: 31, &#39;completion_tokens_details&#39;: None, &#39;prompt_tokens_details&#39;: {&#39;audio_tokens&#39;: None, &#39;cached_tokens&#39;: 0}}, &#39;model_provider&#39;: &#39;openai&#39;, &#39;model_name&#39;: &#39;qwen-flash&#39;, &#39;system_fingerprint&#39;: None, &#39;id&#39;: &#39;chatcmpl-9c662ca1-3d6f-4c29-9dae-d5503f03773f&#39;, &#39;finish_reason&#39;: &#39;stop&#39;, &#39;logprobs&#39;: None} id=&#39;lc_run--019af2c1-c144-7b72-91ea-8785cb636758-0&#39; usage_metadata={&#39;input_tokens&#39;: 26, &#39;output_tokens&#39;: 5, &#39;total_tokens&#39;: 31, &#39;input_token_details&#39;: {&#39;cache_read&#39;: 0}, &#39;output_token_details&#39;: {}}
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#这里返回的是一个AIMessage对象,里面包括很多内容,有content,additional_kwargs,response_metadata等</span></span><br><span class="line"><span class="comment">#response_metadata中有&#x27;token_usage&#x27;: &#123;&#x27;completion_tokens&#x27;: 5, &#x27;prompt_tokens&#x27;: 26, &#x27;total_tokens&#x27;: 31, &#x27;completion_tokens_details&#x27;: None, &#x27;prompt_tokens_details&#x27;: &#123;&#x27;audio_tokens&#x27;: None, &#x27;cached_tokens&#x27;: 0&#125;&#125;</span></span><br><span class="line"><span class="built_in">print</span>(model.invoke(messages))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 不同的model.invoke()写法,学会理解其含义</span></span><br><span class="line">model.invoke(<span class="string">&quot;Hello&quot;</span>)</span><br><span class="line">model.invoke([&#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: <span class="string">&quot;Hello&quot;</span>&#125;])</span><br><span class="line">model.invoke([HumanMessage(<span class="string">&quot;Hello&quot;</span>)])</span><br><span class="line">model.invoke([SystemMessage(<span class="string">&quot;Translate the following from English into Chinese&quot;</span>),HumanMessage(<span class="string">&quot;Hello, how are you?&quot;</span>)])</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>使用<code>ChatOpenAi</code>调用llm,兼容几乎所有主流大模型</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_openai <span class="keyword">import</span> ChatOpenAI</span><br><span class="line">llm=ChatOpenAI(</span><br><span class="line">    base_url=<span class="string">&quot;https://dashscope.aliyuncs.com/compatible-mode/v1&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;qwen-flash&quot;</span>,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">output=llm.invoke([</span><br><span class="line">    SystemMessage(content=<span class="string">&quot;Translate the following from English into Chinese&quot;</span>),</span><br><span class="line">    HumanMessage(content=<span class="string">&quot;Hello!&quot;</span>)</span><br><span class="line">])</span><br><span class="line"><span class="built_in">print</span>(output)</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>也可以使用langchain_community.chat_models</li>
+</ol>
+<ul>
+<li>关于这里的<code>base_url</code>,如果使用的chatmodel和你的api提供商是一致的,则不需要写<code>base_url</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_community.chat_models <span class="keyword">import</span> ChatTongyi</span><br><span class="line">tongyi_model=ChatTongyi(</span><br><span class="line">    model=<span class="string">&quot;qwen-flash&quot;</span>,</span><br><span class="line">    api_key=os.environ[<span class="string">&quot;OPENAI_API_KEY&quot;</span>],</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">output=tongyi_model.invoke([</span><br><span class="line">    SystemMessage(content=<span class="string">&quot;Translate the following from English into Chinese&quot;</span>),</span><br><span class="line">    HumanMessage(content=<span class="string">&quot;Hello!&quot;</span>)</span><br><span class="line">])</span><br><span class="line"><span class="built_in">print</span>(output)</span><br></pre></td></tr></table></figure>
+
+<pre><code>content=&#39;你好！&#39; additional_kwargs={} response_metadata={&#39;model_name&#39;: &#39;qwen-flash&#39;, &#39;finish_reason&#39;: &#39;stop&#39;, &#39;request_id&#39;: &#39;1962db60-9a9c-4151-ae28-4b2e91f2ad04&#39;, &#39;token_usage&#39;: {&#39;input_tokens&#39;: 22, &#39;output_tokens&#39;: 2, &#39;prompt_tokens_details&#39;: {&#39;cached_tokens&#39;: 0}, &#39;total_tokens&#39;: 24}} id=&#39;lc_run--019af2d8-4c05-7b41-9662-617d93110ecb-0&#39;
+</code></pre>
+<ol start="5">
+<li>流式输出</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#只需要把invoke换成stream就可实现流式输出</span></span><br><span class="line"><span class="comment">#且返回的不再是结果,而是一个迭代器</span></span><br><span class="line">stream=llm.stream(<span class="string">&quot;你好&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> chunk <span class="keyword">in</span> stream:</span><br><span class="line">    <span class="built_in">print</span>(chunk.text, end=<span class="string">&#x27;&#x27;</span>, flush=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>你好！有什么我可以帮助你的吗？😊
+</code></pre>
+<ol start="6">
+<li>提示词模板</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_core.prompts <span class="keyword">import</span> ChatPromptTemplate</span><br><span class="line">prompt_template=ChatPromptTemplate.from_messages([</span><br><span class="line">    (<span class="string">&quot;system&quot;</span>,<span class="string">&quot;translate the following from English into &#123;language&#125;&quot;</span>),(<span class="string">&quot;human&quot;</span>,<span class="string">&quot;&#123;text&#125;&quot;</span>)</span><br><span class="line">    ])</span><br><span class="line">prompt=prompt_template.invoke(&#123;<span class="string">&quot;language&quot;</span>:<span class="string">&quot;Chinese&quot;</span>,<span class="string">&quot;text&quot;</span>:<span class="string">&quot;Hello, how are you?&quot;</span>&#125;)</span><br><span class="line"><span class="built_in">print</span>(prompt)</span><br></pre></td></tr></table></figure>
+
+<pre><code>messages=[SystemMessage(content=&#39;translate the following from English into Chinese&#39;, additional_kwargs={}, response_metadata={}), HumanMessage(content=&#39;Hello, how are you?&#39;, additional_kwargs={}, response_metadata={})]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">output=llm.invoke(prompt)</span><br><span class="line"><span class="built_in">print</span>(output)</span><br></pre></td></tr></table></figure>
+
+<pre><code>content=&#39;你好，你好吗？&#39; additional_kwargs={&#39;refusal&#39;: None} response_metadata={&#39;token_usage&#39;: {&#39;completion_tokens&#39;: 5, &#39;prompt_tokens&#39;: 26, &#39;total_tokens&#39;: 31, &#39;completion_tokens_details&#39;: None, &#39;prompt_tokens_details&#39;: {&#39;audio_tokens&#39;: None, &#39;cached_tokens&#39;: 0}}, &#39;model_provider&#39;: &#39;openai&#39;, &#39;model_name&#39;: &#39;qwen-flash&#39;, &#39;system_fingerprint&#39;: None, &#39;id&#39;: &#39;chatcmpl-951e7b5f-f80b-44cb-8818-1b813baec992&#39;, &#39;finish_reason&#39;: &#39;stop&#39;, &#39;logprobs&#39;: None} id=&#39;lc_run--019afc04-5a3d-78d2-a535-807be24c89e9-0&#39; usage_metadata={&#39;input_tokens&#39;: 26, &#39;output_tokens&#39;: 5, &#39;total_tokens&#39;: 31, &#39;input_token_details&#39;: {&#39;cache_read&#39;: 0}, &#39;output_token_details&#39;: {}}
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<!-- flag of hidden posts -->
+            </article>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <footer
+        style="text-align: center; padding: 50px; color: #444; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace;">
+        <p>SiyuanZhang @ SJTU | SYSTEM ONLINE</p>
+    </footer>
+
+    <!-- 脚本部分 -->
+    <script>
+        window.onscroll = function () {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+    <script>
+        if (window.innerWidth > 768) {
+            VANTA.NET({
+                el: "body",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0xFFC800,       // 已改为黄色
+                backgroundColor: 0x050505,
+                points: 8.00,
+                maxDistance: 22.00,
+                spacing: 40.00
+            })
+        }
+    </script>
+</body>
+
+</html>
