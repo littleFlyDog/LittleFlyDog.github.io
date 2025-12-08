@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        siyuan&#39;s blog | SJTU
+    </title><meta name="robots" content="noindex">
+    <!-- 图标 -->
+    <link rel="icon" href="/img/favicon.png">
+    <!-- 字体 -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- 样式 -->
+    <link rel="stylesheet" href="/css/style.css">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+    <!-- 顶部进度条：颜色已改为 FFC800 (黄色) -->
+    <div id="progress-bar"
+        style="position: fixed; top: 0; left: 0; height: 3px; background: #FFC800; width: 0%; z-index: 9999; transition: width 0.1s;">
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="menu">
+                <a href="/">Home</a>
+                <a href="/archives">Archives</a>
+                <a href="/about">About Me</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="mailto:siyuanzhang@sjtu.edu.cn" class="nav-icon" title="Email Me">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+            </a>
+            <a href="https://github.com/littleFlyDog" target="_blank" class="nav-icon" title="Visit my GitHub">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="vscode-wrapper">
+    <!-- 标题栏 -->
+    <div class="window-header">
+        <div class="traffic-lights">
+            <div class="dot close"></div>
+            <div class="dot minimize"></div>
+            <div class="dot maximize"></div>
+        </div>
+        <!-- 标题栏文字居中 -->
+        <div style="margin: 0 auto; color: #999; font-size: 0.8rem; font-family: sans-serif;">
+            day5:RAG实战 - Hello World!
+        </div>
+    </div>
+
+    <div class="vscode-body">
+        <!-- 侧边栏 -->
+        <div class="vscode-sidebar">
+            <div class="side-icon active"></div>
+            <div class="side-icon"></div>
+            <div class="side-icon"></div>
+        </div>
+
+        <!-- 内容区 -->
+        <div style="flex: 1; background: var(--vscode-bg);">
+            <!-- 标签页 -->
+            <div style="background: #1e1e1e; height: 35px; display: flex; border-bottom: 1px solid #252526;">
+                <div
+                    style="padding: 0 20px; display: flex; align-items: center; color: #fff; border-top: 1px solid var(--accent-color); background: #1e1e1e; font-size: 0.8rem; border-right: 1px solid #252526;">
+                    <span style="color: #f1e05a; margin-right: 8px; font-weight: bold;">JS</span>
+                    day5:RAG实战.md
+                </div>
+            </div>
+
+            <!-- 面包屑 -->
+            <div style="padding: 10px 40px; color: #555; font-size: 0.8rem; font-family: monospace;">
+                src > posts > day5:rag实战
+            </div>
+
+            <!-- 正文 -->
+            <article class="post-content">
+                <h1>
+                    day5:RAG实战
+                </h1>
+                <div style="color: #666; margin-bottom: 30px; font-family: monospace; font-size: 0.8rem;">
+                    // Author: SiyuanZhang<br>
+                    // Published: 2025-12-08
+                </div>
+
+                <h2 id="RAG实战"><a href="#RAG实战" class="headerlink" title="RAG实战"></a><center>RAG实战</center></h2><hr>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> config.load_key <span class="keyword">import</span> load_key</span><br><span class="line"><span class="keyword">from</span> langchain_openai.embeddings <span class="keyword">import</span> OpenAIEmbeddings</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> langchain_openai <span class="keyword">import</span> ChatOpenAI</span><br><span class="line">os.environ[<span class="string">&quot;SLICONFLOW_API_KEY&quot;</span>] = load_key(<span class="string">&quot;SLICONFLOW_API_KEY&quot;</span>)</span><br><span class="line">os.environ[<span class="string">&quot;OPENAI_API_KEY&quot;</span>] = load_key(<span class="string">&quot;OPENAI_API_KEY&quot;</span>)</span><br><span class="line"></span><br><span class="line">llm= ChatOpenAI(</span><br><span class="line">    base_url=<span class="string">&quot;https://dashscope.aliyuncs.com/compatible-mode/v1&quot;</span>,</span><br><span class="line">    model=<span class="string">&quot;qwen-flash&quot;</span></span><br><span class="line">)</span><br><span class="line">embedding_model = OpenAIEmbeddings(</span><br><span class="line">    model=<span class="string">&quot;Qwen/Qwen3-Embedding-4B&quot;</span>,</span><br><span class="line">    base_url=<span class="string">&quot;https://api.siliconflow.cn/v1&quot;</span>,</span><br><span class="line">    api_key=load_key(<span class="string">&quot;SLICONFLOW_API_KEY&quot;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(llm.invoke(<span class="string">&quot;如何退款?&quot;</span>).content)</span><br></pre></td></tr></table></figure>
+
+<pre><code>关于如何退款，具体步骤会根据你购买商品或服务的平台、商家政策以及支付方式有所不同。以下是一般情况下的退款流程，供你参考：
+
+---
+
+### 一、确认是否符合退款条件
+大多数平台和商家都有明确的退款政策，常见情况包括：
+- 商品未发货（如网购）
+- 商品收到后发现质量问题或与描述严重不符
+- 收到的商品与订单不符（如错发、漏发）
+- 个人原因（如不想要了）——需看平台是否支持“七天无理由退货”
+
+&gt; ⚠️ 注意：部分商品（如定制类、生鲜食品、数字产品等）可能不支持无理由退款。
+
+---
+
+### 二、准备相关材料
+通常需要提供以下信息或凭证：
+- 订单编号
+- 购买截图或发票
+- 商品问题照片或视频（如有）
+- 与客服沟通记录
+
+---
+
+### 三、申请退款的常见途径
+
+#### 1. **在电商平台申请（如淘宝、京东、拼多多、天猫等）**
+- 打开对应平台App/网站 → 进入“我的订单”
+- 找到要退款的订单 → 点击“申请退款”或“退货退款”
+- 选择退款原因（如“质量问题”、“与描述不符”等）
+- 提交凭证（上传照片/视频）
+- 等待商家审核（一般1-3个工作日）
+
+✅ 如果商家同意，按提示寄回商品（部分支持“上门取件”）
+✅ 收到退货后，平台会将款项原路退回（一般3-15天到账）
+
+#### 2. **通过支付方式申请（如微信支付、支付宝）**
+- 打开微信/支付宝 → 查看账单 → 找到该笔交易 → 选择“申请退款”
+- 说明退款原因并提交凭证
+- 平台会联系商家处理，若商家拒绝，可申诉
+
+#### 3. **直接联系商家客服**
+- 通过店铺聊天窗口、电话、邮件等方式联系客服
+- 说明退款原因，并提出退款请求
+- 若商家同意，按其指引操作（如退货地址、退款方式等）
+
+---
+
+### 四、注意事项
+- 保留好所有沟通记录和凭证
+- 退款时间因平台和支付方式而异，一般为3~15天
+- 若商家拒绝退款，可向平台投诉或拨打消费者热线（如中国：12315）
+- 使用信用卡付款的，也可联系银行申请“争议交易”处理
+
+---
+
+### 五、如果遇到困难？
+你可以告诉我：
+- 你在哪个平台买的？（如淘宝、抖音、美团等）
+- 是什么类型的商品？（实物、服务、课程、会员等）
+- 是否已收到货？是否有问题？
+
+我可以帮你一步步指导具体操作。
+
+--- 
+
+希望这些信息对你有帮助！如有具体场景，欢迎补充细节 😊
+</code></pre>
+<ol>
+<li>indexing索引阶段,对各种文件类型的文档进行检索</li>
+</ol>
+<ul>
+<li>利用<code>from langchain_community.document_loaders import WebBaseLoader</code>爬取网页信息</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_community.document_loaders <span class="keyword">import</span> WebBaseLoader</span><br><span class="line"></span><br><span class="line">url = <span class="string">&quot;https://waimai.meituan.com/help/faq&quot;</span></span><br><span class="line"><span class="comment"># 配置 User-Agent 伪装成 Chrome 浏览器</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 传入 header_template</span></span><br><span class="line">loader = WebBaseLoader(url, header_template=headers)</span><br><span class="line"></span><br><span class="line">data = loader.load()</span><br><span class="line"><span class="comment"># print(data[0].page_content)</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;meituan.txt&quot;</span>, <span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(data[<span class="number">0</span>].page_content)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_community.document_loaders <span class="keyword">import</span> TextLoader</span><br><span class="line">loader = TextLoader(<span class="string">&quot;meituan.txt&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">documents = loader.load()</span><br><span class="line">documents</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[Document(metadata={&#39;source&#39;: &#39;meituan.txt&#39;}, page_content=&#39;美团外卖 - 常见问题 \n在线支付问题\n\nQ：在线支付取消订单后钱怎么返还？\n订单取消后，款项会在一个工作日内，直接返还到您的美团账户余额。\n\nQ：怎么查看退款是否成功？\n退款会在一个工作日之内到美团账户余额，可在“账号管理——我的账号”中查看是否到账。\n\nQ：美团账户里的余额怎么提现?\n余额可到美团网（meituan.com）——“我的美团→美团余额”里提取到您的银行卡或者支付宝账号，另外，余额也可直接用于支付外卖订单（限支持在线支付的商家）。\n\nQ：余额提现到账时间是多久？\n1-7个工作日内可退回您的支付账户。由于银行处理可能有延迟，具体以账户的到账时间为准。\n\nQ：申请退款后，商家拒绝了怎么办？\n申请退款后，如果商家拒绝，此时回到订单页面点击“退款申诉”，美团客服介入处理。\n\nQ：怎么取消退款呢？\n请在订单页点击“不退款了”，商家还会正常送餐的。\n\nQ：怎么取消退款呢？\n请在订单页点击“不退款了”，商家还会正常送餐的。\n\nQ：前面下了一个在线支付的单子，由于未付款，订单自动取消了，这单会计算我的参与活动次数吗？\n不会。如果是未支付的在线支付订单，可以先将订单取消（如果不取消需要15分钟后系统自动取消），订单无效后，此时您再下单仍会享受活动的优惠。\n\nQ：为什么我用微信订餐，却无法使用在线支付？\n目前只有网页版和美团外卖手机App(非美团手机客户端)订餐，才能使用在线支付，请更换到网页版和美团外卖手机App下单。\n\nQ：如何进行付款？\n美团外卖现在支持货到付款与在线支付，其中微信版与手机触屏版暂不支持在线支付。\n\nQ：如何查看可以在线支付的商家？\n你可以在商家列表页寻找带有“付”标识的商家，提交订单时可以选择支付方式。\n\nQ：美团外卖支持哪些支付方式？\n现已支持美团余额、支付宝、网银（储蓄卡、信用卡）。\n\nQ：在线支付订单如何退款？\n商家接单前，您可以直接取消订单，订单金额会自动退款到美团余额；商家接单后，您在点击“申请退款”，在线申请。提交退款申请之后，商家有24小时处理您的退款申请。商家同意退款，或24小时内没有处理您的退款申请，您的支付金额会退款至您的美团余额。\n\nQ：在线支付的过程中，订单显示未支付成功，款项却被扣了，怎么办？\n出现此问题，可能是银行/支付宝的数据没有即时传输至美团，请您不要担心，稍后刷新页面查看。如半小时后仍显示&quot;未付款&quot;，请先联系银行/支付宝客服，获取您扣款的交易号，然后致电美团外卖客服4008507777，我们会协助您解决。\n\nQ：哪些商家有优惠？都有些什么优惠？\n有优惠的商家在商家列表页均含有优惠标识；具体的优惠可以查看活动详情或者商家详情页中的描述。\n\nQ：在新用户享受的优惠中，新用户的条件是什么？\n新用户是指第一次在美团外卖下单的用户（同一设备、同一手机号、同一账户仅可享受一次）。\n\nQ：我达到了满赠、满减的优惠的金额，为什么没有享受相关的优惠？\n满赠与满减优惠是以订单内菜品的总额来计算的，不包含配送费与包装费。\n\nQ：超时赔付是什么意思？\n超时赔付模式即：商家承诺一个送达时间和一个折扣,从用户下单时间开始计算,如果外卖超过了承诺时间才送到,该份外卖按照折扣价收取费用。由于恶劣天气、某些美食烹调时间过长、或者其他因素,商家会选择性的延长承诺时间或者不做承诺。预订单不参与超时赔付。\n\nQ：为什么提示我“账户存在异常，无法下单”？\n包含（但不仅限于）以下行为者，系统将自动予以封禁（客服无权解封）：i）有过虚假交易（编造不存在真实买卖的订单）；ii）有过恶意下单行为。\n\nQ：如何取消订单？\n如果商家尚未接单，您可以在订单详情页通过“取消订单”功能进行取消;如果商家已接单，则需要您电话联系后由商家取消订单。\n\nQ：我的订单为什么被取消了？\n如果商家5分钟未接您的订单，为了保障您的权益，系统将会为您自动取消订单；商家接单后可能由于无法联系到您、菜品售完等原因无法配送，因而取消了您的订单，具体原因可查看系统发送的短信或通知。\n\nQ：如何进行催单？\n您可以在订单状态页面点击“电话催单”按钮向商家商家催单。\n\nQ：刚下单发现信息填错了怎么办？\n如果商家尚未接单，您可以自主取消订单；如果商家已经接单，您可以电话联系商家后由对方取消订单。然后重新下一单。\n\nQ：我的订单是否被商家确认？\nApp用户可以在商家确认您的订单时收到推送通知，并且订单状态会实时更新；手机触屏版及微信用户可以刷新订单状态页查看。\n\nQ：预计送达的时间为什么与我实际收餐的时间不符？\n预计送达时间是系统根据用户评价的时间进行综合计算而得到的参考时间，餐厅的实际配送时间会受到当天的天气、订单量等外界因素影响。\n\nQ：为什么会出现无法下单的情况？\n无法下单有很多情况，可能是菜品售完、餐厅不在营业时间等，请查看无法下单时给的提示。\n\nQ：为什么提示下单次数过多，已无法下单？\n同一手机号在同一设备上一天最多可以成功提交7次订单（在线支付以完成支付为准，货到付款以提交订单为准）。\n\nQ：如果对商家服务不满意如何进行投诉？\n您可以在该订单完成评价后点击订单详情页中的意见反馈向客服投诉，或者拨打美团外卖的客服电话（400-850-7777）向客服进行投诉。\n\nQ：如何联系客服解决问题？\n您可以拨打美团外卖的客服电话（400-850-7777）或者在“我的”——&gt;“意见反馈”页面提交反馈。\n\nQ：我用的是手机客户端，为什么无法定位？\n请先检查手机的网络以及是否开启定位功能。若确认正常，请试着在户外或wifi环境下进行定位。\n\nQ：如何修改自己的账户信息？\n美团外卖使用的是美团账号，您可以在“我的”页面修改个人账号信息，也可以在美团网账号页面修改个人账号。\n\nQ：为什么有时需要输入短信验证码？\n为了保障您的账号安全及商家利益，对于新用户及一些有异常行为的下单系统会提示您输入短信验证码。如果迟迟未接收到短信验证码，您同样可以选择接听语音验证码。&#39;)]
+</code></pre>
+<ul>
+<li>切分documents</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> langchain_text_splitters <span class="keyword">import</span> CharacterTextSplitter</span><br><span class="line">text_splitter = CharacterTextSplitter(chunk_size=<span class="number">1000</span>, chunk_overlap=<span class="number">0</span>, separator=<span class="string">&quot;\n\n&quot;</span>,keep_separator=<span class="literal">True</span>)</span><br><span class="line">segments= text_splitter.split_documents(documents)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;切分后文档数: <span class="subst">&#123;<span class="built_in">len</span>(segments)&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> segment <span class="keyword">in</span> segments:</span><br><span class="line">    <span class="built_in">print</span>(segment.page_content)</span><br></pre></td></tr></table></figure>
+
+<pre><code>切分后文档数: 3
+美团外卖 - 常见问题 
+在线支付问题
+
+Q：在线支付取消订单后钱怎么返还？
+订单取消后，款项会在一个工作日内，直接返还到您的美团账户余额。
+
+Q：怎么查看退款是否成功？
+退款会在一个工作日之内到美团账户余额，可在“账号管理——我的账号”中查看是否到账。
+
+Q：美团账户里的余额怎么提现?
+余额可到美团网（meituan.com）——“我的美团→美团余额”里提取到您的银行卡或者支付宝账号，另外，余额也可直接用于支付外卖订单（限支持在线支付的商家）。
+
+Q：余额提现到账时间是多久？
+1-7个工作日内可退回您的支付账户。由于银行处理可能有延迟，具体以账户的到账时间为准。
+
+Q：申请退款后，商家拒绝了怎么办？
+申请退款后，如果商家拒绝，此时回到订单页面点击“退款申诉”，美团客服介入处理。
+
+Q：怎么取消退款呢？
+请在订单页点击“不退款了”，商家还会正常送餐的。
+
+Q：怎么取消退款呢？
+请在订单页点击“不退款了”，商家还会正常送餐的。
+
+Q：前面下了一个在线支付的单子，由于未付款，订单自动取消了，这单会计算我的参与活动次数吗？
+不会。如果是未支付的在线支付订单，可以先将订单取消（如果不取消需要15分钟后系统自动取消），订单无效后，此时您再下单仍会享受活动的优惠。
+
+Q：为什么我用微信订餐，却无法使用在线支付？
+目前只有网页版和美团外卖手机App(非美团手机客户端)订餐，才能使用在线支付，请更换到网页版和美团外卖手机App下单。
+
+Q：如何进行付款？
+美团外卖现在支持货到付款与在线支付，其中微信版与手机触屏版暂不支持在线支付。
+
+Q：如何查看可以在线支付的商家？
+你可以在商家列表页寻找带有“付”标识的商家，提交订单时可以选择支付方式。
+
+Q：美团外卖支持哪些支付方式？
+现已支持美团余额、支付宝、网银（储蓄卡、信用卡）。
+
+Q：在线支付订单如何退款？
+商家接单前，您可以直接取消订单，订单金额会自动退款到美团余额；商家接单后，您在点击“申请退款”，在线申请。提交退款申请之后，商家有24小时处理您的退款申请。商家同意退款，或24小时内没有处理您的退款申请，您的支付金额会退款至您的美团余额。
+Q：在线支付的过程中，订单显示未支付成功，款项却被扣了，怎么办？
+出现此问题，可能是银行/支付宝的数据没有即时传输至美团，请您不要担心，稍后刷新页面查看。如半小时后仍显示&quot;未付款&quot;，请先联系银行/支付宝客服，获取您扣款的交易号，然后致电美团外卖客服4008507777，我们会协助您解决。
+
+Q：哪些商家有优惠？都有些什么优惠？
+有优惠的商家在商家列表页均含有优惠标识；具体的优惠可以查看活动详情或者商家详情页中的描述。
+
+Q：在新用户享受的优惠中，新用户的条件是什么？
+新用户是指第一次在美团外卖下单的用户（同一设备、同一手机号、同一账户仅可享受一次）。
+
+Q：我达到了满赠、满减的优惠的金额，为什么没有享受相关的优惠？
+满赠与满减优惠是以订单内菜品的总额来计算的，不包含配送费与包装费。
+
+Q：超时赔付是什么意思？
+超时赔付模式即：商家承诺一个送达时间和一个折扣,从用户下单时间开始计算,如果外卖超过了承诺时间才送到,该份外卖按照折扣价收取费用。由于恶劣天气、某些美食烹调时间过长、或者其他因素,商家会选择性的延长承诺时间或者不做承诺。预订单不参与超时赔付。
+
+Q：为什么提示我“账户存在异常，无法下单”？
+包含（但不仅限于）以下行为者，系统将自动予以封禁（客服无权解封）：i）有过虚假交易（编造不存在真实买卖的订单）；ii）有过恶意下单行为。
+
+Q：如何取消订单？
+如果商家尚未接单，您可以在订单详情页通过“取消订单”功能进行取消;如果商家已接单，则需要您电话联系后由商家取消订单。
+
+Q：我的订单为什么被取消了？
+如果商家5分钟未接您的订单，为了保障您的权益，系统将会为您自动取消订单；商家接单后可能由于无法联系到您、菜品售完等原因无法配送，因而取消了您的订单，具体原因可查看系统发送的短信或通知。
+
+Q：如何进行催单？
+您可以在订单状态页面点击“电话催单”按钮向商家商家催单。
+
+Q：刚下单发现信息填错了怎么办？
+如果商家尚未接单，您可以自主取消订单；如果商家已经接单，您可以电话联系商家后由对方取消订单。然后重新下一单。
+
+Q：我的订单是否被商家确认？
+App用户可以在商家确认您的订单时收到推送通知，并且订单状态会实时更新；手机触屏版及微信用户可以刷新订单状态页查看。
+Q：预计送达的时间为什么与我实际收餐的时间不符？
+预计送达时间是系统根据用户评价的时间进行综合计算而得到的参考时间，餐厅的实际配送时间会受到当天的天气、订单量等外界因素影响。
+
+Q：为什么会出现无法下单的情况？
+无法下单有很多情况，可能是菜品售完、餐厅不在营业时间等，请查看无法下单时给的提示。
+
+Q：为什么提示下单次数过多，已无法下单？
+同一手机号在同一设备上一天最多可以成功提交7次订单（在线支付以完成支付为准，货到付款以提交订单为准）。
+
+Q：如果对商家服务不满意如何进行投诉？
+您可以在该订单完成评价后点击订单详情页中的意见反馈向客服投诉，或者拨打美团外卖的客服电话（400-850-7777）向客服进行投诉。
+
+Q：如何联系客服解决问题？
+您可以拨打美团外卖的客服电话（400-850-7777）或者在“我的”——&gt;“意见反馈”页面提交反馈。
+
+Q：我用的是手机客户端，为什么无法定位？
+请先检查手机的网络以及是否开启定位功能。若确认正常，请试着在户外或wifi环境下进行定位。
+
+Q：如何修改自己的账户信息？
+美团外卖使用的是美团账号，您可以在“我的”页面修改个人账号信息，也可以在美团网账号页面修改个人账号。
+
+Q：为什么有时需要输入短信验证码？
+为了保障您的账号安全及商家利益，对于新用户及一些有异常行为的下单系统会提示您输入短信验证码。如果迟迟未接收到短信验证码，您同样可以选择接听语音验证码。
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_chroma <span class="keyword">import</span> Chroma</span><br><span class="line">vectorstore = Chroma(</span><br><span class="line">    embedding_function=embedding_model,</span><br><span class="line">    collection_name=<span class="string">&quot;meituan_faq&quot;</span>,</span><br><span class="line">    persist_directory=<span class="string">&quot;./chroma_meituan&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">vectorstore.add_documents(segments, ids=[<span class="built_in">str</span>(i) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(segments))])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[&#39;0&#39;, &#39;1&#39;, &#39;2&#39;]
+</code></pre>
+<ol start="2">
+<li>retriever 检索阶段</li>
+</ol>
+<ul>
+<li>根据以前知识自己尝试</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#1. prompt</span></span><br><span class="line"><span class="keyword">from</span> langchain_core.prompts <span class="keyword">import</span> ChatPromptTemplate</span><br><span class="line">prompt_1 = ChatPromptTemplate.from_messages([</span><br><span class="line">    (<span class="string">&quot;system&quot;</span>, <span class="string">&quot;你是一个美团外卖的客服专家,请根据用户的问题,结合你的专业知识和美团外卖的常见问题,为用户提供准确且详细的回答。如果你不确定答案,请诚实地告诉用户你不知道。&quot;</span>),</span><br><span class="line">    (<span class="string">&quot;user&quot;</span>, <span class="string">&quot;用户的问题: &#123;question&#125;&quot;</span>)</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">format_prompt_value</span>(<span class="params">prompt_value</span>):</span><br><span class="line">    <span class="keyword">return</span> prompt_value.to_string()</span><br><span class="line"></span><br><span class="line">retriever=vectorstore.as_retriever(search_type=<span class="string">&quot;similarity&quot;</span>, search_kwargs=&#123;<span class="string">&quot;k&quot;</span>:<span class="number">2</span>&#125;)</span><br><span class="line"></span><br><span class="line">chain= prompt_1 | format_prompt_value | retriever </span><br><span class="line">outputs=chain.invoke(&#123;<span class="string">&quot;question&quot;</span>:<span class="string">&quot;一个手机号在一个设备上一天最多可以成功提交多少次订单?&quot;</span>&#125;)</span><br><span class="line"><span class="comment"># for output in outputs:</span></span><br><span class="line"><span class="comment">#     print(output.page_content)</span></span><br><span class="line">prompt_2 = ChatPromptTemplate.from_messages([</span><br><span class="line">    (<span class="string">&quot;system&quot;</span>, <span class="string">&quot;你是一个美团外卖的客服专家,请根据用户的问题,结合我所给的参考资料,为用户提供准确且详细的回答。如果你不确定答案,请诚实地告诉用户你不知道。&quot;</span>),</span><br><span class="line">    (<span class="string">&quot;user&quot;</span>, <span class="string">&quot;用户的问题: &#123;question&#125;,参考资料: &#123;context&#125;&quot;</span>)</span><br><span class="line">])</span><br><span class="line">final_prompt= prompt_2.invoke(&#123;</span><br><span class="line">    <span class="string">&quot;question&quot;</span>:<span class="string">&quot;一个手机号在一个设备上一天最多可以成功提交多少次订单?&quot;</span>,</span><br><span class="line">    <span class="string">&quot;context&quot;</span>:<span class="string">&quot;&quot;</span>.join([output.page_content <span class="keyword">for</span> output <span class="keyword">in</span> outputs])&#125;)</span><br><span class="line"></span><br><span class="line">results=llm.invoke(final_prompt)</span><br><span class="line"><span class="built_in">print</span>(results.content)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>根据您提供的参考资料，**一个手机号在一个设备上一天最多可以成功提交7次订单**。
+
+&gt; **说明**：  
+&gt; 此规则中的“成功提交”是指订单已完成支付（在线支付）或已提交（货到付款）。如果因系统原因导致订单未成功，不计入该限制次数。  
+&gt; 此限制是为了防止恶意刷单、虚假交易等异常行为，保障平台正常运营。
+
+如果您遇到“提示下单次数过多，已无法下单”的情况，建议：
+- 检查是否在同一天内已提交超过7次成功订单；
+- 确保不是使用同一设备和手机号频繁下单；
+- 若有特殊情况，可联系美团外卖客服（400-850-7777）咨询处理。
+
+如有其他疑问，欢迎继续提问！
+</code></pre>
+<ol start="3">
+<li>使用chain来整合整个流程</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_core.output_parsers <span class="keyword">import</span> StrOutputParser</span><br><span class="line"><span class="keyword">from</span> langchain_core.runnables <span class="keyword">import</span> RunnableMap, RunnableLambda</span><br><span class="line">query=<span class="string">&quot;在线⽀付取消订单后钱怎么返还&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">prompt_template= ChatPromptTemplate.from_messages([</span><br><span class="line">(<span class="string">&quot;user&quot;</span>, <span class="string">&quot;&quot;&quot;你是⼀个答疑机器⼈，你的任务是根据下述给定的已知信息回答⽤户的问题。</span></span><br><span class="line"><span class="string">已知信息：&#123;context&#125;</span></span><br><span class="line"><span class="string">⽤户问题：&#123;question&#125;</span></span><br><span class="line"><span class="string">如果已知信息不包含⽤户问题的答案，或者已知信息不⾜以回答⽤户的问题，请直接回复“我⽆法回答您的问题”。</span></span><br><span class="line"><span class="string">请不要输出已知信息中不包含的信息或答案。</span></span><br><span class="line"><span class="string">请⽤中⽂回答⽤户问题。&quot;&quot;&quot;</span>)</span><br><span class="line">])</span><br><span class="line"><span class="comment"># 收集document的内容</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">collect_documents</span>(<span class="params">segments</span>):</span><br><span class="line">    text = []</span><br><span class="line">    <span class="keyword">for</span> segment <span class="keyword">in</span> segments:</span><br><span class="line">        text.append(segment.page_content)</span><br><span class="line">    <span class="keyword">return</span> text</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">chain = (&#123;</span><br><span class="line"><span class="string">&quot;context&quot;</span>:RunnableLambda(<span class="keyword">lambda</span> x: x[<span class="string">&quot;question&quot;</span>]) | retriever | collect_documents,</span><br><span class="line"><span class="string">&quot;question&quot;</span>:RunnableLambda(<span class="keyword">lambda</span> x: x[<span class="string">&quot;question&quot;</span>])</span><br><span class="line">&#125; | prompt_template | llm | StrOutputParser()</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">response = chain.invoke(&#123;<span class="string">&quot;question&quot;</span>:query&#125;)</span><br><span class="line"><span class="built_in">print</span>(response)</span><br></pre></td></tr></table></figure>
+
+<pre><code>订单取消后，款项会在一个工作日内，直接返还到您的美团账户余额。
+</code></pre>
+<ol start="4">
+<li>如何提升RAG的质量?</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<!-- flag of hidden posts -->
+            </article>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <footer
+        style="text-align: center; padding: 50px; color: #444; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace;">
+        <p>SiyuanZhang @ SJTU | SYSTEM ONLINE</p>
+    </footer>
+
+    <!-- 脚本部分 -->
+    <script>
+        window.onscroll = function () {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+    <script>
+        if (window.innerWidth > 768) {
+            VANTA.NET({
+                el: "body",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0xFFC800,       // 已改为黄色
+                backgroundColor: 0x050505,
+                points: 8.00,
+                maxDistance: 22.00,
+                spacing: 40.00
+            })
+        }
+    </script>
+</body>
+
+</html>
