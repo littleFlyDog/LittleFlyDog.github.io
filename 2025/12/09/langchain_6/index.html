@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         siyuan&#39;s blog | SJTU
-    </title>
+    </title><meta name="robots" content="noindex">
     <!-- 图标 -->
     <link rel="icon" href="/img/favicon.png">
     <!-- 字体 -->
@@ -58,7 +58,7 @@
         </div>
         <!-- 标题栏文字居中 -->
         <div style="margin: 0 auto; color: #999; font-size: 0.8rem; font-family: sans-serif;">
-            langchain - Hello World!
+            day6:Ollama本地部署LLM - Hello World!
         </div>
     </div>
 
@@ -77,37 +77,65 @@
                 <div
                     style="padding: 0 20px; display: flex; align-items: center; color: #fff; border-top: 1px solid var(--accent-color); background: #1e1e1e; font-size: 0.8rem; border-right: 1px solid #252526;">
                     <span style="color: #f1e05a; margin-right: 8px; font-weight: bold;">JS</span>
-                    langchain.md
+                    day6:Ollama本地部署LLM.md
                 </div>
             </div>
 
             <!-- 面包屑 -->
             <div style="padding: 10px 40px; color: #555; font-size: 0.8rem; font-family: monospace;">
-                src > posts > langchain
+                src > posts > day6:ollama本地部署llm
             </div>
 
             <!-- 正文 -->
             <article class="post-content">
                 <h1>
-                    langchain
+                    day6:Ollama本地部署LLM
                 </h1>
                 <div style="color: #666; margin-bottom: 30px; font-family: monospace; font-size: 0.8rem;">
                     // Author: SiyuanZhang<br>
-                    // Published: 2025-12-08
+                    // Published: 2025-12-09
                 </div>
 
-                <h2 id="从0开始学习langchain"><a href="#从0开始学习langchain" class="headerlink" title="从0开始学习langchain"></a>从0开始学习langchain</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV12vSsBuEU7?spm_id_from=333.788.videopod.episodes&vd_source=0121c3c057b79f7b6ff546351c1dd4bd">课程参考链接</a></p>
-</blockquote>
+                <h2 id="Ollama本地部署LLM"><a href="#Ollama本地部署LLM" class="headerlink" title="Ollama本地部署LLM"></a><center>Ollama本地部署LLM</center></h2><hr>
 <ol>
-<li><a href="/2025/12/08/langchain_1/">day1:LLM的简单调用</a></li>
-<li><a href="/2025/12/08/langchain_2/">day2:LCEL链</a></li>
-<li><a href="/2025/12/08/langchain_3/">day3:大模型的工具调用</a></li>
-<li><a href="/2025/12/08/langchain_4/">day4:使用embedding实现自然语言搜索</a></li>
-<li><a href="/2025/12/08/langchain_5/">day5:RAG实战</a></li>
-<li><a href="/2025/12/09/langchain_6/">day6:Ollama本地部署LLM</a></li>
+<li>下载Ollama即可实现开源大模型在本地的部署,实现了数据的安全</li>
 </ol>
+<ul>
+<li>相关指令如下</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ollama list</span><br><span class="line">ollama run qwen2.5:3b</span><br><span class="line">ollama --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
 
+<ol start="2">
+<li>使用langchain调用本地Ollama模型</li>
+</ol>
+<ul>
+<li>使用<code>ChatOllama</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_community.chat_models <span class="keyword">import</span> ChatOllama</span><br><span class="line">llm_1 = ChatOllama(model=<span class="string">&quot;qwen2.5:3b&quot;</span>, base_url=<span class="string">&quot;http://localhost:11434&quot;</span>)</span><br><span class="line">llm_1.invoke(<span class="string">&quot;你是谁&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>AIMessage(content=&#39;我是Qwen，是阿里云开发的一一个大型语言模型。我叫Qwen，是由阿里巴巴集团研发的超大规模语言模型，旨在提供广泛的知识和信息，帮助用户解答问题、给出建议或者进行创造性思考。与您对话是我的荣幸！&#39;, additional_kwargs={}, response_metadata={&#39;model&#39;: &#39;qwen2.5:3b&#39;, &#39;created_at&#39;: &#39;2025-12-09T14:31:31.17432Z&#39;, &#39;message&#39;: {&#39;role&#39;: &#39;assistant&#39;, &#39;content&#39;: &#39;&#39;}, &#39;done&#39;: True, &#39;done_reason&#39;: &#39;stop&#39;, &#39;total_duration&#39;: 802226200, &#39;load_duration&#39;: 162719800, &#39;prompt_eval_count&#39;: 31, &#39;prompt_eval_duration&#39;: 12166400, &#39;eval_count&#39;: 55, &#39;eval_duration&#39;: 543528800}, id=&#39;lc_run--019b0386-3f62-73c3-863e-23c877f72b54-0&#39;)
+</code></pre>
+<ul>
+<li>使用<code>ChatOpenAi</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_openai <span class="keyword">import</span> ChatOpenAI</span><br><span class="line">llm_2 = ChatOpenAI(model=<span class="string">&quot;qwen2.5:3b&quot;</span>, base_url=<span class="string">&quot;http://localhost:11434/v1&quot;</span>,openai_api_key=<span class="string">&quot;666&quot;</span>)</span><br><span class="line">llm_2.invoke(<span class="string">&quot;你是谁&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>AIMessage(content=&#39;我是Qwen，阿里云开发的超大规模语言模型。我在阿里巴巴集团的支持下训练，能够生成各种各样的文本，比如故事、剧本、编程代码等，请您放心地向我提问或交流。如有任何问题，请尽管告诉我！我在这里帮助你。&#39;, additional_kwargs={&#39;refusal&#39;: None}, response_metadata={&#39;token_usage&#39;: {&#39;completion_tokens&#39;: 58, &#39;prompt_tokens&#39;: 31, &#39;total_tokens&#39;: 89, &#39;completion_tokens_details&#39;: None, &#39;prompt_tokens_details&#39;: None}, &#39;model_provider&#39;: &#39;openai&#39;, &#39;model_name&#39;: &#39;qwen2.5:3b&#39;, &#39;system_fingerprint&#39;: &#39;fp_ollama&#39;, &#39;id&#39;: &#39;chatcmpl-218&#39;, &#39;finish_reason&#39;: &#39;stop&#39;, &#39;logprobs&#39;: None}, id=&#39;lc_run--019b0386-753f-7fc2-98b4-2d25cb265585-0&#39;, usage_metadata={&#39;input_tokens&#39;: 31, &#39;output_tokens&#39;: 58, &#39;total_tokens&#39;: 89, &#39;input_token_details&#39;: {}, &#39;output_token_details&#39;: {}})
+</code></pre>
+<ol start="3">
+<li>使用langchain调用Ollama embedding模型</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_ollama.embeddings <span class="keyword">import</span> OllamaEmbeddings</span><br><span class="line">embeddings = OllamaEmbeddings(model=<span class="string">&quot;nomic-embed-text:latest&quot;</span>, base_url=<span class="string">&quot;http://localhost:11434&quot;</span>)</span><br><span class="line">vector = embeddings.embed_query(<span class="string">&quot;你好!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(vector))</span><br></pre></td></tr></table></figure>
+
+<pre><code>768
+</code></pre>
+<!-- flag of hidden posts -->
             </article>
         </div>
     </div>
