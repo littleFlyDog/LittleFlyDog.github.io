@@ -113,10 +113,14 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_community.chat_models <span class="keyword">import</span> ChatOllama</span><br><span class="line">llm_1 = ChatOllama(model=<span class="string">&quot;qwen2.5:3b&quot;</span>, base_url=<span class="string">&quot;http://localhost:11434&quot;</span>)</span><br><span class="line">llm_1.invoke(<span class="string">&quot;你是谁&quot;</span>)</span><br></pre></td></tr></table></figure>
 
+<pre><code>C:\Users\siyuanzhang\AppData\Local\Temp\ipykernel_2856\53624327.py:2: LangChainDeprecationWarning: The class `ChatOllama` was deprecated in LangChain 0.3.1 and will be removed in 1.0.0. An updated version of the class exists in the `langchain-ollama package and should be used instead. To use it run `pip install -U `langchain-ollama` and import as `from `langchain_ollama import ChatOllama``.
+  llm_1 = ChatOllama(model=&quot;qwen2.5:3b&quot;, base_url=&quot;http://localhost:11434&quot;)
 
 
 
-<pre><code>AIMessage(content=&#39;我是Qwen，是阿里云开发的一一个大型语言模型。我叫Qwen，是由阿里巴巴集团研发的超大规模语言模型，旨在提供广泛的知识和信息，帮助用户解答问题、给出建议或者进行创造性思考。与您对话是我的荣幸！&#39;, additional_kwargs={}, response_metadata={&#39;model&#39;: &#39;qwen2.5:3b&#39;, &#39;created_at&#39;: &#39;2025-12-09T14:31:31.17432Z&#39;, &#39;message&#39;: {&#39;role&#39;: &#39;assistant&#39;, &#39;content&#39;: &#39;&#39;}, &#39;done&#39;: True, &#39;done_reason&#39;: &#39;stop&#39;, &#39;total_duration&#39;: 802226200, &#39;load_duration&#39;: 162719800, &#39;prompt_eval_count&#39;: 31, &#39;prompt_eval_duration&#39;: 12166400, &#39;eval_count&#39;: 55, &#39;eval_duration&#39;: 543528800}, id=&#39;lc_run--019b0386-3f62-73c3-863e-23c877f72b54-0&#39;)
+
+
+AIMessage(content=&#39;我是Qwen，是阿里巴巴推出的一种超大规模语言模型。我会回答与我的设定和训练内容相关的问题，请你放心提问关于你想要领域的问题，欢迎向我询问！&#39;, additional_kwargs={}, response_metadata={&#39;model&#39;: &#39;qwen2.5:3b&#39;, &#39;created_at&#39;: &#39;2025-12-10T08:01:11.4095119Z&#39;, &#39;message&#39;: {&#39;role&#39;: &#39;assistant&#39;, &#39;content&#39;: &#39;&#39;}, &#39;done&#39;: True, &#39;done_reason&#39;: &#39;stop&#39;, &#39;total_duration&#39;: 3751482400, &#39;load_duration&#39;: 3277307000, &#39;prompt_eval_count&#39;: 31, &#39;prompt_eval_duration&#39;: 34987200, &#39;eval_count&#39;: 39, &#39;eval_duration&#39;: 367443100}, id=&#39;lc_run--019b0747-3c3b-7f62-b72c-2e453f26b00f-0&#39;)
 </code></pre>
 <ul>
 <li>使用<code>ChatOpenAi</code></li>
@@ -135,6 +139,32 @@
 
 <pre><code>768
 </code></pre>
+<ol start="4">
+<li>one-API搭建大模型网关</li>
+</ol>
+<blockquote>
+<p>这是一个非常繁琐和复杂的过程,需要时间,但在配置中能学到很多知识</p>
+</blockquote>
+<ul>
+<li>首先下载<code>wsl</code>,用于承载接下来安装的Docker</li>
+<li>下载Docker Desktop,用于对镜像的控制</li>
+<li>完成以上步骤后,在命令行中输入命令下载并运行one-api的docker</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run --name one-api -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v E:\MYDATA\one-api:/data justsong/one-api</span><br></pre></td></tr></table></figure>
+<ul>
+<li>打开<a target="_blank" rel="noopener" href="http://localhost:3000/,%E8%AF%A5%E7%BD%91%E5%9D%80%E5%8D%B3%E4%B8%BAone-api%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%8E%A7%E5%88%B6%E5%8F%B0,%E4%BD%A0%E9%9C%80%E8%A6%81%E5%9C%A8%E9%87%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%E4%B8%8D%E5%90%8C%E7%9A%84%E6%A8%A1%E5%9E%8B%E8%BF%90%E8%A1%8C%E5%95%86%E6%88%96%E8%80%85%E6%9C%AC%E5%9C%B0Ollama%E7%9A%84%E6%A8%A1%E5%9E%8B,%E5%85%B7%E4%BD%93%E8%BF%87%E7%A8%8B%E4%B8%BA%E9%80%89%E6%8B%A9%E6%96%B9%E5%BC%8F,%E9%80%89%E6%8B%A9%E6%A8%A1%E5%9E%8B,%E8%BE%93%E5%85%A5%E4%BD%A0%E5%9C%A8%E5%90%84%E5%A4%A7%E7%BD%91%E7%AB%99%E7%9A%84api_key,%E4%BF%9D%E5%AD%98%E5%90%8E%E5%8D%B3%E5%8F%AF%E5%AE%8C%E6%88%90%E9%85%8D%E7%BD%AE">http://localhost:3000/,该网址即为one-api的个人控制台,你需要在里面配置不同的模型运行商或者本地Ollama的模型,具体过程为选择方式,选择模型,输入你在各大网站的api_key,保存后即可完成配置</a></li>
+<li>创建令牌,即可得到一个统一的api_key,之后在langchain中不用频繁输入各大厂商的api_key,只需统一输入这个令牌api_key,即可访问所有你上一步配置中保存好的模型(one-API兼容chatopenai)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#不论本地的还是购买的api key都可以使用one api统一调用,接口统一,非常方便</span></span><br><span class="line"><span class="keyword">from</span> langchain_openai <span class="keyword">import</span> ChatOpenAI</span><br><span class="line"><span class="keyword">from</span> langchain_openai.embeddings <span class="keyword">import</span> OpenAIEmbeddings</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> config <span class="keyword">import</span> load_key</span><br><span class="line">os.environ[<span class="string">&quot;OPENAI_API_KEY&quot;</span>] = load_key(<span class="string">&quot;ONE_API_KEY&quot;</span>)</span><br><span class="line">llm_oneapi_ollama = ChatOpenAI(model=<span class="string">&quot;qwen2.5:3b&quot;</span>, base_url=<span class="string">&quot;http://localhost:3000/v1&quot;</span>)</span><br><span class="line">llm_oneapi_aliyun = ChatOpenAI(model=<span class="string">&quot;qwen-plus&quot;</span>, base_url=<span class="string">&quot;http://localhost:3000/v1&quot;</span>)</span><br><span class="line">embedding_oneapi_ollama=OpenAIEmbeddings(model=<span class="string">&quot;nomic-embed-text:latest&quot;</span>, base_url=<span class="string">&quot;http://localhost:3000/v1&quot;</span>,check_embedding_ctx_length=<span class="literal">False</span>)</span><br><span class="line"><span class="built_in">print</span>(llm_oneapi_ollama.invoke(<span class="string">&quot;你是什么版本?&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(llm_oneapi_aliyun.invoke(<span class="string">&quot;你是什么版本?&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(embedding_oneapi_ollama.embed_query(<span class="string">&quot;你好!&quot;</span>)))</span><br></pre></td></tr></table></figure>
+
+<pre><code>content=&#39;我是一个最新的AI助手模型，持续在迭代和学习中。每次与您的交流都帮助我变得更强大、更了解世界。您有任何问题或需求，我都随时准备帮助您。如何开始我们的对话呢？&#39; additional_kwargs={&#39;refusal&#39;: None} response_metadata={&#39;token_usage&#39;: {&#39;completion_tokens&#39;: 47, &#39;prompt_tokens&#39;: 33, &#39;total_tokens&#39;: 80, &#39;completion_tokens_details&#39;: None, &#39;prompt_tokens_details&#39;: None}, &#39;model_provider&#39;: &#39;openai&#39;, &#39;model_name&#39;: &#39;qwen2.5:3b&#39;, &#39;system_fingerprint&#39;: None, &#39;id&#39;: &#39;chatcmpl-98b795bd93fa42dab4cbba6e09f0ae15&#39;, &#39;finish_reason&#39;: &#39;stop&#39;, &#39;logprobs&#39;: None} id=&#39;lc_run--019b075c-13a2-7e33-bebd-28993e6abd62-0&#39; usage_metadata={&#39;input_tokens&#39;: 33, &#39;output_tokens&#39;: 47, &#39;total_tokens&#39;: 80, &#39;input_token_details&#39;: {}, &#39;output_token_details&#39;: {}}
+content=&#39;我是通义千问系列的最新版本，但具体版本号可能需要查看官方文档或发布说明来确定。如果您有特定的问题或需要帮助，我可以尽力提供支持！&#39; additional_kwargs={&#39;refusal&#39;: None} response_metadata={&#39;token_usage&#39;: {&#39;completion_tokens&#39;: 38, &#39;prompt_tokens&#39;: 12, &#39;total_tokens&#39;: 50, &#39;completion_tokens_details&#39;: None, &#39;prompt_tokens_details&#39;: {&#39;audio_tokens&#39;: None, &#39;cached_tokens&#39;: 0}}, &#39;model_provider&#39;: &#39;openai&#39;, &#39;model_name&#39;: &#39;qwen-plus&#39;, &#39;system_fingerprint&#39;: None, &#39;id&#39;: &#39;chatcmpl-8dfbb2f4-22c7-4c81-b00c-690e168424fb&#39;, &#39;finish_reason&#39;: &#39;stop&#39;, &#39;logprobs&#39;: None} id=&#39;lc_run--019b075c-1669-7af0-8580-20b7a2f2d3c3-0&#39; usage_metadata={&#39;input_tokens&#39;: 12, &#39;output_tokens&#39;: 38, &#39;total_tokens&#39;: 50, &#39;input_token_details&#39;: {&#39;cache_read&#39;: 0}, &#39;output_token_details&#39;: {}}
+768
+</code></pre>
+<ol start="5">
+<li>FastGPT构建本地知识问答库</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 <!-- flag of hidden posts -->
             </article>
         </div>
